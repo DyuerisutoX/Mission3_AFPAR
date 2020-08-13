@@ -22,183 +22,247 @@
     </head>
 <body>
   <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark info-color">
-        <a class="navbar-brand" href="#">
-            <img src="comic.png" alt="Logo" width="30"> Comic Store
-        </a>
-        <form class='navbar-form'>
-            <input class="form-control" type="search" placeholder="Recherche" aria-label="Search">
-        </form>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Nouveautés</a>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark info-color">
+      <a class="navbar-brand" href="#">
+          <img src="comic.png" alt="Logo" width="30"> Comic Store
+      </a>
+      <form class='navbar-form'>
+          <input class="form-control" type="search" placeholder="Recherche" aria-label="Search">
+      </form>
+      <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Nouveautés</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Actu BD</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">La communauté</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Forum</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Actu BD</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">La communauté</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Forum</a>
+        </ul>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+                  <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="#">Nouveautés</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
               </li>
           </ul>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
-                    <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Nouveautés</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+                  <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                  <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+                </svg>
+                Compte
+              </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="#">
-                 <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                   <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
-                   <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                   <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
-                 </svg>
-                 Compte
-                </a>
-             </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="#">
-                   <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-cart3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                   <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                   </svg>
-                    Panier
-               </a>
-             </li>
-            </ul>
+                  <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-cart3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                  </svg>
+                  Panier
+              </a>
+            </li>
+          </ul>
+      </div>
+  </nav>
+  <!-- CAROUSEL -->
+  <div id="demo" class="carousel slide" data-ride="carousel">
+      <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+      </ul>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="banniere 1.1.png" alt="Los Angeles" width="1920" height="300">
+          <div class="carousel-caption">
+            <h3>Los Angeles</h3>
+            <p>We had such a great time in LA!</p>
+          </div>   
+        </div>
+        <div class="carousel-item">
+          <img src="banniere 2.2.png" alt="Chicago" width="1920" height="300">
+          <div class="carousel-caption">
+            <h3>Chicago</h3>
+            <p>Thank you, Chicago!</p>
+          </div>   
+        </div>
+        <div class="carousel-item">
+          <img src="banniere 3.3.png" alt="New York" width="1920" height="300">
+          <div class="carousel-caption">
+            <h3>New York</h3>
+            <p>We love the Big Apple!</p>
+          </div>   
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+  </div>
+  <div class="wrapper">
+    <!-- SIDEBAR -->
+    <nav id="sidebar">
+      <div class="d-flex justify-content-center">
+            <!-- TRI -->
+            <div class="mb-5">
+              <h5 class="font-weight-bold mb-3">Trier par</h5>
+  
+              <div class="divider-small mb-3"></div>
+  
+              <ul class="list-unstyled link-black">
+                <li class="mb-2">
+                  <a href="" class="active">Defaut</a>
+                </li>
+                <li class="mb-2">
+                  <a href="" class="">Popularité</a>
+                </li>
+                <li class="mb-2">
+                  <a href="" class="">Avis</a>
+                </li>
+                <li class="mb-2">
+                  <a href="" class="">Prix: croissant</a>
+                </li>
+                <li class="mb-2">
+                  <a href="" class="">Price: décroissant</a>
+                </li>
+              </ul>
+            </div>
+            <!-- FILTRE CATEGORIE -->
+            <div class="mb-5">
+  
+              <h5 class="font-weight-bold mb-3">Catégorie</h5>
+  
+              <div class="divider-small mb-3"></div>
+  
+              <div class="form-check pl-0 mb-2">
+                <input type="radio" class="form-check-input" id="materialGroupExample1" name="groupOfMaterialRadios">
+                <label class="form-check-label" for="materialGroupExample1">All</label>
+              </div>
+  
+              <div class="form-check pl-0 mb-2">
+                <input type="radio" class="form-check-input" id="materialGroupExample2" name="groupOfMaterialRadios"
+                  checked>
+                <label class="form-check-label" for="materialGroupExample2">Laptops</label>
+              </div>
+  
+              <div class="form-check pl-0 mb-2">
+                <input type="radio" class="form-check-input" id="materialGroupExample3" name="groupOfMaterialRadios">
+                <label class="form-check-label" for="materialGroupExample3">Smartphones</label>
+              </div>
+  
+              <div class="form-check pl-0 mb-2">
+                <input type="radio" class="form-check-input" id="materialGroupExample4" name="groupOfMaterialRadios">
+                <label class="form-check-label" for="materialGroupExample4">Tablets</label>
+              </div>
+  
+            </div>
+            <!-- FILTRE PRIX -->
+            <div class="mb-5">
+  
+              <h5 class="font-weight-bold mb-3">Price</h5>
+  
+              <div class="divider-small mb-3"></div>
+  
+              <form class="range-field">
+                <input type="range" min="0" max="319" />
+              </form>
+  
+              <div class="row justify-content-center">
+  
+                <!-- Grid column -->
+                <div class="text-left">
+                  <p class="dark-grey-text"><strong id="resellerEarnings">0$</strong></p>
+                </div>
+                <!-- Grid column -->
+  
+                <!-- Grid column -->
+                <div class="text-right">
+                  <p class="dark-grey-text"><strong id="clientPrice">319$</strong></p>
+                </div>
+                <!-- Grid column -->
+              </div>
+  
+            </div>
         </div>
       </nav>
-      <!-- CAROUSEL -->
-      <div id="demo" class="carousel slide" data-ride="carousel">
-        <ul class="carousel-indicators">
-          <li data-target="#demo" data-slide-to="0" class="active"></li>
-          <li data-target="#demo" data-slide-to="1"></li>
-          <li data-target="#demo" data-slide-to="2"></li>
-        </ul>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="banniere 1.1.png" alt="Los Angeles" width="1920" height="300">
-            <div class="carousel-caption">
-              <h3>Los Angeles</h3>
-              <p>We had such a great time in LA!</p>
-            </div>   
-          </div>
-          <div class="carousel-item">
-            <img src="banniere 2.2.png" alt="Chicago" width="1920" height="300">
-            <div class="carousel-caption">
-              <h3>Chicago</h3>
-              <p>Thank you, Chicago!</p>
-            </div>   
-          </div>
-          <div class="carousel-item">
-            <img src="banniere 3.3.png" alt="New York" width="1920" height="300">
-            <div class="carousel-caption">
-              <h3>New York</h3>
-              <p>We love the Big Apple!</p>
-            </div>   
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </a>
-      </div>
-      <div class="wrapper">
-        <!-- SIDEBAR -->
-        <nav id="sidebar">
-          <div class="sidebar-header">
-            <h3>Menu filtrage</h3>
-          </div>
-        </nav>
-        <!-- CONTENU DE LA PAGE -->
-        <div id="content">
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <div class="container-fluid">
-                  <button type="button" id="sidebarCollapse" class="btn btn-info">
-                      <i class="fas fa-align-left"></i>
-                      <span>Toggle Sidebar</span>
-                  </button>
-              </div>
-          </nav>
-        </div>
-      </div>
-
-      <!--Ajout code Nico -->
-      <div class="container">
-
-        <div class="container">
-
-            <!-- 1ère row: 12 col -->
-            <div class="row" style="background-color: #ffffff;">
-    
-                <div class="col" >
-                </div>
-        
-                <div class="col" >
-                </div>
-        
-                <div class="col" >
-                </div>
-        
-                <div class="col" >
-                </div>
-        
-                <div class="col" >
-                </div>
-        
-                <div class="col" >
-                </div>
-        
-                <div class="col" >
-                </div>
-                
-                <div class="col" >
-                </div>
-        
-                <div class="col" >                
-                </div>
-        
-                <div class="col" >
-                </div>
-        
-                <div class="col" >
-                </div>
-        
-                <div class="col" >
-                </div>
-        
+      <!-- CONTENU DE LA PAGE -->
+      <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-align-left"></i>
+                    <span>Toggle Sidebar</span>
+                </button>
             </div>
-
-        </div>
+        </nav>
+        <div class="container-fluid">
+          <!-- 1ère row: 12 col -->
+          <div class="row" style="background-color: #ffffff;">
+              <div class="col" >
+              </div>
+              <div class="col" >
+              </div>
+              <div class="col" >
+              </div>
+              <div class="col" >
+              </div>
+              <div class="col" >
+              </div>
+              <div class="col" >
+              </div>
+              <div class="col" >
+              </div>
+              <div class="col" >
+              </div>
+              <div class="col" >                
+              </div>
+              <div class="col" >
+              </div>
+              <div class="col" >
+              </div>
+              <div class="col" >
+              </div>
+            </div>
+      </div>
+      </div>
+    </div>
+    <!--Ajout code Nico -->
     <div class="container">
-        <div class="row">
-           <div class="col-6 col-sm-5 col-md-4 col-lg-3 test">
-             Une des deux colonnes
-           </div>
-           <div class="col-6 col-sm-7 col-md-8 col-lg-9 test">
-              Une des deux colonnes
-           </div>
-        </div>
-     </div>
-      <footer class="bg-dark">
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
-          <a href="#"> Mentions légales</a>
-          .
-          <a href="#">Politique de confidentialité</a>
-        </div>
-      </footer>
+  <div class="container">
+      <div class="row">
+          <div class="col-6 col-sm-5 col-md-4 col-lg-3 test">
+            Une des deux colonnes
+          </div>
+          <div class="col-6 col-sm-7 col-md-8 col-lg-9 test">
+            Une des deux colonnes
+          </div>
+      </div>
+  </div>
+    </div>
+    <!-- FOOTER -->
+    <footer class="bg-dark">
+      <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="#"> Mentions légales</a>
+        .
+        <a href="#">Politique de confidentialité</a>
+      </div>
+    </footer>
 </body>
 </html>
