@@ -1,0 +1,19 @@
+.row {
+    border: 1px solid #c51616;
+    padding: 3px;
+    /* border: 1px solid black; */
+    background-color: #ffffff;
+  }
+  [class^="col"] {
+    padding: 1rem;
+    border: 1px solid #6a6e29;
+  }
+
+
+  .test{
+    background-color: darkgreen;
+}
+
+.navbar{
+  background-color: crimson;
+}
