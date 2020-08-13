@@ -5,6 +5,10 @@
     background: #cccccc;
     color: #fff;
     transition: all 0.3s;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    padding: 2em;
 }
 
 .inline-form {
@@ -37,12 +41,6 @@
     display: flex;
     width: 100%;
 }
-#sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    min-height: 100vh;
-}
-
 #sidebar.active {
     margin-left: -250px;
 }
