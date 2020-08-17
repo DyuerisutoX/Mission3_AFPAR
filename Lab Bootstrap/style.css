@@ -55,16 +55,16 @@
         margin-left: 0;
     }
 }
+.produit {
+    height: 200px;
+    position: relative;
+}
 .bd {
     margin: 1em;
-    height: 200px;
-}
-.produit {
-    position: relative;
     border-radius: 20px;
 }
 
-.produit .ajout {
+.ajout {
     position: absolute;
     bottom: 0;
     right: 0;
