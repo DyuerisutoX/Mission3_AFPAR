@@ -55,8 +55,18 @@
         margin-left: 0;
     }
 }
-@media (max-width: 1038px) {
-    .menu {
-        display: none;
-    }
+.bd {
+    margin: 1em;
+    height: 200px;
 }
+.produit {
+    position: relative;
+    border-radius: 20px;
+}
+
+.produit .ajout {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+

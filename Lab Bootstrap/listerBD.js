@@ -1,3 +1,4 @@
+import {Client} from './client.js'
 var tableClient = new Array;
 tableClient[0] = new Client(1, 'Google', 'Omniscient', "2 999 000 000", '8745, Rue de l\'infini', 'Cercle', 'GAFA',"public", "0693907333");
 tableClient[1] = new Client(2, 'Apple',"Electronique","245 500 000", 'New-york City',"Pomme", "GAFA", "private", "0692123456");
@@ -29,17 +30,28 @@ tableClient[21] = new Client(22, 'Huawei',"Téléphonie","800 000", 'A coté de 
  */
 function afficherliste(client) {
   // Récupération de l'élement
-  const elApp = document.getElementsByClassName("tableClient")[0];
+  const elApp = document.getElementById("listeBD");
   elApp.innerHTML = "";
 
-  let data = '<div class="row">';
+  let data = "";
   // Récupération des données
   client.forEach(c => {
     data += 
-    `<div class="col-2">
-        <div class="imageLivre">
+    `<div class="col-sm-12 col-md-4 col-lg-3 col-xl-2 produit">
+      <div class="produit bg-dark text-white">
+        <div class="bd">
+          <div class="imageLivre">
+          </div>
+          <p>${c.getNomSociete()}</p>
+
         </div>
-        <p>${c.getNumClient()}</p>
+        <button type="button" class="btn btn-primary ajout"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M8.5 5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 .5-.5z"/>
+        <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0v-2z"/>
+        <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+      </svg></button>
+      </div>
+
     </div>`;
   });
 
@@ -48,16 +60,16 @@ function afficherliste(client) {
     elApp.innerHTML += data;
   } else {
     // Aucune donnée
-    elApp.innerHTML += "Aucune ligne trouvée";
+    elApp.innerHTML += "Aucune BD trouvée";
   }
 }
 // affiche le tableau de client
 afficherliste(tableClient);
 
 // rechercher un client par nom de societe
-  document.querySelectorAll("input[type=search]")[0].addEventListener("input", function() {
+/*   document.querySelectorAll("input[type=search]")[0].addEventListener("input", function() {
     const filteredData = tableClient.filter(client =>
         client.getNomSociete().toLowerCase().includes(this.value.toLowerCase())
       );
     afficherliste(filteredData);
-  });
+  }); */
