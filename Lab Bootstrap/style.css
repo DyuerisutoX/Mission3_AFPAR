@@ -55,18 +55,24 @@
         margin-left: 0;
     }
 }
-.produit {
-    height: 200px;
+.produit { 
     position: relative;
+    padding: 0.1em;
 }
 .bd {
-    margin: 1em;
+    margin: 0.5em;
     border-radius: 20px;
+    height: 200px;
+    text-align: center;
 }
 
 .ajout {
     position: absolute;
     bottom: 0;
     right: 0;
+}
+.imageLivre {
+    height: 170px;
+    
 }
 
