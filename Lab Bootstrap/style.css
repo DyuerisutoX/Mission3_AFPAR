@@ -74,3 +74,22 @@
 .imageLivre {
     height: 170px;
 }
+
+.dropdown-menu {
+    margin-top:1em ;
+    padding: 1em;
+
+}
+.dropdown-menu::after {
+    bottom: 100%;
+    left: 95%;
+    border: 1px solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: white;
+    border-width: 8px;
+    margin-left: -8px;
+}
