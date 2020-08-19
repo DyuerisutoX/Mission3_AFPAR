@@ -37,7 +37,7 @@ function afficherliste(client) {
   // Récupération des données
   client.forEach(c => {
     data += 
-    `<div class="col-sm-12 col-md-4 col-lg-3 col-xl-3">
+    `<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3">
       <div class="produit">
         <div class="bd bg-dark text-white">
           <div class="imageLivre">
