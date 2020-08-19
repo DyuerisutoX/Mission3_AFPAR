@@ -27,8 +27,11 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <!-- LOGO -->
-      <a class="navbar-brand" href="#">
-          <img src="./media/comic.png" alt="Logo" width="30"> Comic Store
+      <a class="navbar-brand d-block d-sm-block d-md-none" href="#">
+          <img src="./media/comicv2.png" alt="Logo" width="30">
+      </a>
+      <a class="navbar-brand d-none d-sm-none d-md-block" href="#">
+        <img src="./media/comicv2.png" alt="Logo" width="30"> Comic Store
       </a>
       <!-- BARRE DE RECHERCHE -->
       <form class='navbar-form mr-auto'>
@@ -176,73 +179,65 @@
     </div>
     <div class="wrapper">
       <!-- SIDEBAR -->
-      <nav id="sidebar" class="bg-dark ">
-        <div class="d-flex justify-content-center position-relative">
-          <div class="position-sticky sticky-top">
-            <!-- TRI -->
-            <div class="mb-5">
-              <h5 class="font-weight-bold mb-3">Trier par</h5>
-              <hr>
-              <ul class="list-unstyled link-black">
-                <li class="mb-2">
-                  <a href="" class="active">Tout</a>
-                </li>
-                <li class="mb-2">
-                  <a href="" class="">Popularité</a>
-                </li>
-                <li class="mb-2">
-                  <a href="" class="">Avis</a>
-                </li>
-                <li class="mb-2">
-                  <a href="" class="">Prix: croissant</a>
-                </li>
-                <li class="mb-2">
-                  <a href="" class="">Prix: décroissant</a>
-                </li>
-              </ul>
+      <div class="col-lg-3 col-md-3 col-sm-4 col-xl-2 p-4 text-white bg-dark d-none d-sm-none d-md-block" id="sidebar">
+        <div class="mb-5">
+          <h5 class="font-weight-bold mb-3">Trier par</h5>
+          <div class="divider-small mb-3"></div>
+          <ul class="list-unstyled link-black">
+            <li class="mb-2">
+              <a href="" class="active">Tout</a>
+            </li>
+            <li class="mb-2">
+              <a href="" class="">Popularité</a>
+            </li>
+            <li class="mb-2">
+              <a href="" class="">Avis</a>
+            </li>
+            <li class="mb-2">
+              <a href="" class="">Prix: croissant</a>
+            </li>
+            <li class="mb-2">
+              <a href="" class="">Prix: décroissant</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mb-5">
+          <h5 class="font-weight-bold mb-3">Categorie</h5>
+          <div class="divider-small mb-3"></div>
+          <div class="form-check mb-2">
+            <input type="radio" class="form-check-input" id="materialGroupExample1" name="groupOfMaterialRadios">
+            <label class="form-check-label" for="materialGroupExample1">Tout</label>
+          </div>
+          <div class="form-check mb-2">
+            <input type="radio" class="form-check-input" id="materialGroupExample2" name="groupOfMaterialRadios"
+              checked>
+            <label class="form-check-label" for="materialGroupExample2">Science - fiction</label>
+          </div>
+          <div class="form-check mb-2">
+            <input type="radio" class="form-check-input" id="materialGroupExample3" name="groupOfMaterialRadios">
+            <label class="form-check-label" for="materialGroupExample3">Manga</label>
+          </div>
+          <div class="form-check mb-2">
+            <input type="radio" class="form-check-input" id="materialGroupExample4" name="groupOfMaterialRadios">
+            <label class="form-check-label" for="materialGroupExample4">Comics</label>
+          </div>
+        </div>
+        <div class="mb-5">
+          <h5 class="font-weight-bold mb-3">Prix</h5>
+          <div class="divider-small mb-3"></div>
+          <form class="range-field">
+            <input type="range" min="0" max="319" />
+          </form>
+          <div class="row justify-content-center">
+            <div class="col-md-6 text-left">
+              <p class="dark-grey-text"><strong id="resellerEarnings">0€</strong></p>
             </div>
-            <!-- FILTRE CATEGORIE -->
-            <div class="mb-5">
-              <h5 class="font-weight-bold mb-3">Catégorie</h5>
-              <hr>
-              <div class="form-check pl-0 mb-2">
-                <input type="radio" class="form-check-input" id="materialGroupExample1" name="groupOfMaterialRadios">
-                <label class="form-check-label" for="materialGroupExample1">Tout</label>
-              </div>
-              <div class="form-check pl-0 mb-2">
-                <input type="radio" class="form-check-input" id="materialGroupExample2" name="groupOfMaterialRadios"
-                  checked>
-                <label class="form-check-label" for="materialGroupExample2">Science - fiction</label>
-              </div>
-              <div class="form-check pl-0 mb-2">
-                <input type="radio" class="form-check-input" id="materialGroupExample3" name="groupOfMaterialRadios">
-                <label class="form-check-label" for="materialGroupExample3">Manga</label>
-              </div>
-              <div class="form-check pl-0 mb-2">
-                <input type="radio" class="form-check-input" id="materialGroupExample4" name="groupOfMaterialRadios">
-                <label class="form-check-label" for="materialGroupExample4">Comics</label>
-              </div>
-            </div>
-            <!-- FILTRE PRIX -->
-            <div class="mb-5">
-              <h5 class="font-weight-bold mb-3">Prix</h5>
-              <hr>
-              <form class="range-field">
-                <input type="range" min="0" max="319" />
-              </form>
-              <div class="row justify-content-between">
-                <div class="text-left">
-                  <p class="dark-grey-text"><strong id="resellerEarnings">0€</strong></p>
-                </div>
-                <div class="text-right">
-                  <p class="dark-grey-text"><strong id="clientPrice">319€</strong></p>
-                </div>
-              </div>
+            <div class="col-md-6 text-right">
+              <p class="dark-grey-text"><strong id="clientPrice">319€</strong></p>
             </div>
           </div>
         </div>
-      </nav>
-      <!-- CONTENU DE LA PAGE -->
+      </div>
       <div id="content">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid ">
@@ -254,31 +249,7 @@
         </nav>
         <div class="container-fluid">
           <!-- 1ère row: 12 col -->
-          <div class="row" id="listeBD">
-            <div class="col bg-dark" >
-            </div>
-            <div class="col" >
-            </div>
-            <div class="col" >
-            </div>
-            <div class="col" >
-            </div>
-            <div class="col" >
-            </div>
-            <div class="col" >
-            </div>
-            <div class="col" >
-            </div>
-            <div class="col" >
-            </div>
-            <div class="col" >                
-            </div>
-            <div class="col" >
-            </div>
-            <div class="col" >
-            </div>
-            <div class="col" >
-            </div>
+          <div class="row bg-light" id="listeBD">
           </div>
         </div>
         <!--Ajout code Nico -->
@@ -292,9 +263,9 @@
             </div>
           </div> -->
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid bg-light">
           <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-end">
+            <ul class="pagination justify-content-center justify-content-md-end">
               <li class="page-item disabled">
                 <a class="page-link" href="#" tabindex="-1">Precedent</a>
               </li>
@@ -310,151 +281,75 @@
       </div>
     </div>
     <!-- FOOTER DE LA PAGE -->
-    <!-- <footer class="bg-dark text-white">
-      <div class="footer-copyright text-center py-3">© 2020 Copyright:
-        <a href="#"> Mentions légales</a>
-        |
-        <a href="#">Politique de confidentialité</a>
-      </div>
-    </footer> -->
-    <footer class="page-footer font-small unique-color-dark">
-
-      <div class="container-fluid bg-dark text-white">
-    
-          <!-- Grid row-->
-          <div class="row py-4 d-flex align-items-center">
-    
-            <!-- Grid column -->
-            <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-              <h6 class="mb-0">Get connected with us on social networks!</h6>
-            </div>
-            <!-- Grid column -->
-    
-            <!-- Grid column -->
-            <div class="col-md-6 col-lg-7 text-center text-md-right">
-    
-              <!-- Facebook -->
-              <a class="fb-ic">
-                <i class="fab fa-facebook-f white-text mr-4"> </i>
-              </a>
-              <!-- Twitter -->
-              <a class="tw-ic">
-                <i class="fab fa-twitter white-text mr-4"> </i>
-              </a>
-              <!-- Google +-->
-              <a class="gplus-ic">
-                <i class="fab fa-google-plus-g white-text mr-4"> </i>
-              </a>
-              <!--Linkedin -->
-              <a class="li-ic">
-                <i class="fab fa-linkedin-in white-text mr-4"> </i>
-              </a>
-              <!--Instagram-->
-              <a class="ins-ic">
-                <i class="fab fa-instagram white-text"> </i>
-              </a>
-    
-            </div>
-            <!-- Grid column -->
-    
+    <footer class="page-footer">
+      <div class="container-fluid text-white bg-dark">
+        <div class="row py-4 d-flex align-items-center">
+          <div class="col-md-12 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+            <h6 class="mb-0">Suivez nous sur nos reseaux sociaux</h6>
           </div>
-          <!-- Grid row-->
-    
+        </div>
       </div>
-    
-      <!-- Footer Links -->
       <div class="container text-center text-md-left mt-5">
-    
-        <!-- Grid row -->
         <div class="row mt-3">
-    
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-    
-            <!-- Content -->
-            <h6 class="text-uppercase font-weight-bold">Meteo d'aujourdhui</h6>
+          <div class="col-sm-12 col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase font-weight-bold">Météo d'aujourd'hui</h6>
             <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-            <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-              consectetur
-              adipisicing elit.</p>
-    
+            <p>
+              Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,consectetur adipisicing elit.
+            </p>
           </div>
-          <!-- Grid column -->
-    
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-    
-            <!-- Links -->
-            <h6 class="text-uppercase font-weight-bold">Products</h6>
+          <div class="col-sm-4 col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase font-weight-bold">Qui sommes nous</h6>
             <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
             <p>
-              <a href="#!">MDBootstrap</a>
+              <a href="#!">Gérer mes cookies</a>
             </p>
             <p>
-              <a href="#!">MDWordPress</a>
+              <a href="#!">Mentions légales</a>
             </p>
             <p>
-              <a href="#!">BrandFlow</a>
+              <a href="#!">CGU Avis clients</a>
             </p>
             <p>
-              <a href="#!">Bootstrap Angular</a>
+              <a href="#!">CGV / Marketplace</a>
             </p>
     
           </div>
-          <!-- Grid column -->
-    
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-    
-            <!-- Links -->
-            <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+          <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase font-weight-bold">BESOIN D'AIDE</h6>
             <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
             <p>
-              <a href="#!">Your Account</a>
+              <a href="#!">Questions fréquentes</a>
             </p>
             <p>
-              <a href="#!">Become an Affiliate</a>
+              <a href="#!">Modes de règlement</a>
             </p>
             <p>
-              <a href="#!">Shipping Rates</a>
+              <a href="#!">Suivi de commande</a>
             </p>
             <p>
-              <a href="#!">Help</a>
+              <a href="#!">Garantie et retour d'article</a>
             </p>
     
           </div>
-          <!-- Grid column -->
-    
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-    
-            <!-- Links -->
+          <div class="col-sm-4 col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <h6 class="text-uppercase font-weight-bold">Contact</h6>
             <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
             <p>
-              <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+              New York, NY 10012, US</p>
             <p>
-              <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+              info@example.com</p>
             <p>
-              <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+              + 01 234 567 88</p>
             <p>
-              <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+              + 01 234 567 89</p>
     
           </div>
-          <!-- Grid column -->
-    
         </div>
-        <!-- Grid row -->
-    
       </div>
-      <!-- Footer Links -->
-    
-      <!-- Copyright -->
       <div class="footer-copyright text-center py-3">© 2020 Copyright:
         <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
       </div>
-      <!-- Copyright -->
-    
     </footer>
   </body>
   <script src="./js/sidebar.js"></script>
