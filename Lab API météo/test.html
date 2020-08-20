@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo JQuery</title>
+</head>
+<body>
+    <a href="http://jquery.com/">jQuery</a>
+    <script src="jquery.js"></script>
+    <script>
+        /* Execute le script lorsque la page est totalement chargé */
+        window.onload = function() {
+            alert( "welcome" );
+        };
+
+        /* Execute le script lorsque la page est pret */
+        $( document ).ready(function() {
+            $( "a" ).click(function( event ) {
+            alert( "Thanks for visiting!" );
+            event.preventDefault();
+            });
+
+            /* Ajouter une classe a un element HTML */
+            $( "a" ).addClass( "test" );
+
+            /* Supprimer une classe à un élement HTML */
+            $( "a" ).removeClass( "test" );
+
+            /* Effet disparition hide */
+            $( "a" ).click(function( event ) {
+                event.preventDefault();
+                $( this ).hide( "slow" );
+            });
+
+            /* Bonne maniere de créer un callback */
+            $.get( "myhtmlpage.html", function() {
+                myCallBack( param1, param2 );
+            });
+
+        });
+
+
+    </script>
+    <p id="demo"></p>
+</body>
+</html>
