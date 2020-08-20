@@ -104,3 +104,7 @@
 .dropdown-toggle::after {
     display: none
 }
+.tri {
+    width: 13%;
+    min-width: 200px;
+}

@@ -125,21 +125,21 @@
       </ul>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="./media/banniere1.png" class="img-fluid" alt="Los Angeles" width="1920" height="200em">
+          <img src="./media/banniere1.png" alt="Los Angeles" width="1920" height="200em">
           <div class="carousel-caption">
             <h3>Plus ultra</h3>
             <p>My Hero Academia Tome 15</p>
           </div>   
         </div>
         <div class="carousel-item">
-          <img src="./media/banniere2.png" class="img-fluid" alt="Chicago" width="1920" height="200em">
+          <img src="./media/banniere2.png" alt="Chicago" width="1920" height="200em">
           <div class="carousel-caption">
             <h3>Nouveauté</h3>
             <p>Shingeki no Kyojin tome 156</p>
           </div>   
         </div>
         <div class="carousel-item">
-          <img src="./media/banniere3.png" class="img-fluid" alt="New York" width="1920" height="200em">
+          <img src="./media/banniere3.png" alt="New York" width="1920" height="200em">
           <div class="carousel-caption">
             <h3>Best Sellers</h3>
             <p>Boruto : Naruto next generations</p>
@@ -156,27 +156,6 @@
     <div class="wrapper">
       <!-- SIDEBAR -->
       <div class="col-lg-3 col-md-3 col-sm-4 col-xl-2 p-4 text-white bg-dark d-none d-sm-none d-md-block" id="sidebar">
-        <div class="mb-5">
-          <h5 class="font-weight-bold mb-3">Trier par</h5>
-          <div class="divider-small mb-3"></div>
-          <ul class="list-unstyled link-black">
-            <li class="mb-2">
-              <a href="" class="active">Tout</a>
-            </li>
-            <li class="mb-2">
-              <a href="" class="">Popularité</a>
-            </li>
-            <li class="mb-2">
-              <a href="" class="">Avis</a>
-            </li>
-            <li class="mb-2">
-              <a href="" class="">Prix: croissant</a>
-            </li>
-            <li class="mb-2">
-              <a href="" class="">Prix: décroissant</a>
-            </li>
-          </ul>
-        </div>
         <div class="mb-5">
           <h5 class="font-weight-bold mb-3">Categorie</h5>
           <div class="divider-small mb-3"></div>
@@ -217,27 +196,21 @@
       <div id="content">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid ">
-              <button type="button" id="sidebarCollapse" class="btn btn-primary ml-auto">
-                  <i class="fas fa-align-left"></i>
-                  <span>Filtrer les BD</span>
-              </button>
+              <select class="form-control ml-auto tri">
+                <option value="defaut" disabled selected>Trier</option>
+                <option>Par genre</option>
+                <option>Par top des ventes</option>
+                <option>Par note moyenne</option>
+                <option>Par nouveautés</option>
+                <option>Du - cher au + cher</option>
+                <option>Du + cher au - cher</option>
+              </select>
           </div>
         </nav>
         <div class="container-fluid">
           <!-- 1ère row: 12 col -->
           <div class="row bg-light" id="listeBD">
           </div>
-        </div>
-        <!--Ajout code Nico -->
-        <div class="container">
-          <!-- <div class="row">
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 test">
-              Une des deux colonnes
-            </div>
-            <div class="col-6 col-sm-7 col-md-8 col-lg-9 test">
-                Une des deux colonnes
-            </div>
-          </div> -->
         </div>
         <div class="container-fluid bg-light">
           <nav aria-label="Page navigation example">
