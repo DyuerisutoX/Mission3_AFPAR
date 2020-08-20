@@ -28,19 +28,30 @@ tableClient[21] = new Client(22, 'Huawei',"Téléphonie","800 000", 'A coté de 
  * O : /
  * I : @param {*} contact le tableau JS
  */
-function afficherliste(client) {
+function afficherliste() {
   // Récupération de l'élement
   const elApp = document.getElementById("listeBD");
   elApp.innerHTML = "";
 
   let data = "";
   // Récupération des données
-  client.forEach(c => {
+  for (let i = 0; i < albums.size; i++) {
+    var album = albums.get(i)
+    console.log(album)
+    var serie = series.get(album.idSerie);
+    var auteur = auteurs.get(album.idAuteur);
     data += 
     `<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3">
       <div class="produit">
         <div class="bd bg-dark text-white">
-          <div class="imageLivre">
+          <div id="imageLivre">
+            <p id="serie"></p>
+            <p id="numero"></p>
+            <p id="titre"></p>
+            <p id="auteur"></p>
+            <p id="prix"></p>
+            <img id="album">
+            <img id="albumMini">
           </div>
           <p>${c.getNomSociete()}</p>
         </div>
@@ -48,7 +59,7 @@ function afficherliste(client) {
         <i class="fas fa-cart-plus"></i></button>
       </div>
     </div>`;
-  });
+  }
 
   if (data.length > 0) {
     // Affichage des données dans le tableau
@@ -68,3 +79,71 @@ afficherliste(tableClient);
       );
     afficherliste(filteredData);
   }); */
+	var txtSerie = document.getElementById("serie");
+	var txtNumero = document.getElementById("numero");
+	var txtTitre = document.getElementById("titre");
+	var txtAuteur = document.getElementById("auteur");
+	var txtPrix = document.getElementById("prix");
+	var imgAlbum = document.getElementById("album");
+	var imgAlbumMini = document.getElementById("albumMini");
+
+function getAlbum(num) {
+
+  var album = albums.get(num.value);
+
+  if (album === undefined) {
+    txtSerie.value = "";
+    txtNumero.value = "";
+    txtTitre.value = "";
+    txtAuteur.value = "";
+    txtPrix.value = 0;
+
+    afficheAlbums($("#albumMini"), $("#album"), albumDefaultMini, albumDefault);
+
+  } else {
+
+    var serie = series.get(album.idSerie);
+    var auteur = auteurs.get(album.idAuteur);
+
+    txtSerie.value = serie.nom;
+    txtNumero.value = album.numero;
+    txtTitre.value = album.titre;
+    txtAuteur.value = auteur.nom;
+    txtPrix.value = album.prix;
+
+    var nomFic = serie.nom + "-" + album.numero + "-" + album.titre;
+
+    // Utilisation d'une expression régulière pour supprimer 
+    // les caractères non autorisés dans les noms de fichiers : '!?.":$
+    nomFic = nomFic.replace(/'|!|\?|\.|"|:|\$/g, "");
+
+    afficheAlbums(
+      $("#albumMini"),
+      $("#album"),
+      srcAlbumMini + nomFic + ".jpg",
+      srcAlbum + nomFic + ".jpg"
+    );
+
+  }
+}
+
+function afficheAlbums($albumMini, $album, nomFicMini, nomFic) {
+$album.stop(true, true).clearQueue().fadeOut(100, function () {
+  $album.attr('src', nomFic);
+  $albumMini.stop(true, true).clearQueue().fadeOut(150, function () {
+    $albumMini.attr('src', nomFicMini);
+    $albumMini.slideDown(200, function () {
+      $album.slideDown(200);
+    });
+  })
+});
+
+
+}
+function prbImg(element) {
+  // console.log(element);
+  if (element.id === "albumMini")
+    element.src = albumDefaultMini;
+  else element.src = albumDefault;
+
+}
