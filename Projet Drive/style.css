@@ -1,4 +1,8 @@
-/* Sidebar */
+@font-face {
+    font-family: 'anime';
+    src: url(./font/JandaManateeSolid.ttf);
+  }
+* Sidebar */
 #sidebar {
     transition: all 0.3s;
     padding: 2em;
@@ -80,4 +84,7 @@
 .tri {
     width: 13%;
     min-width: 200px;
+}
+.navbar-brand {
+    font-family: 'anime';
 }
