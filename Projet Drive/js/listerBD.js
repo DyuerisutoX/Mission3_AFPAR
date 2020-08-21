@@ -5,9 +5,9 @@ function afficherliste(albums) {
 
   let data = "";
   // Récupération des données
-  for (let i = 1; i < albums.size; i++) {
+  for (let i of albums) {
     
-    var album = albums.get(String(i))
+    var album = albums.get(String(i[0]))
     var serie;
     var numero;
     var titre;
@@ -71,9 +71,8 @@ function afficherliste(albums) {
     elApp.innerHTML += "Aucune BD trouvée";
   }
 }
-
 // affiche la liste de tout les bd
-afficherliste(albums)
+/* afficherliste(albums) */
 
 // tri du - cher au + cher
 var albumsTriCroisssant = new Map([...albums].sort(([k, v], [k2, v2])=> {
@@ -85,7 +84,8 @@ var albumsTriCroisssant = new Map([...albums].sort(([k, v], [k2, v2])=> {
   }
   return 0; 
 }));
-console.log(albumsTriCroisssant)
+/* console.log(albumsTriCroisssant) */
+/* afficherliste(albumsTriCroisssant) */
 
 // tri du + cher au - cher
 var albumsTriDecroissant = new Map([...albums].sort(([cle, valeur], [cle2, valeur2])=> {
@@ -97,7 +97,11 @@ var albumsTriDecroissant = new Map([...albums].sort(([cle, valeur], [cle2, valeu
   }
   return 0; 
 }));
-console.log(albumsTriDecroissant)
+/* console.log(albumsTriDecroissant) */
+// recherche
+var recherche = "sens"
+var albumsRecherche = new Map([...albums].filter(([cle, valeur]) => valeur.titre.includes(recherche)))
+/* console.log(albumsRecherche) */
 
 // rechercher un client par nom de societe
 /*   document.querySelectorAll("input[type=search]")[0].addEventListener("input", function() {
