@@ -1,4 +1,4 @@
-function afficherliste() {
+function afficherliste(albums) {
   // Récupération de l'élement
   const elApp = document.getElementById("listeBD");
   elApp.innerHTML = "";
@@ -73,7 +73,7 @@ function afficherliste() {
 }
 
 // affiche le tableau de client
-afficherliste()
+afficherliste(albums)
 
 // rechercher un client par nom de societe
 /*   document.querySelectorAll("input[type=search]")[0].addEventListener("input", function() {
