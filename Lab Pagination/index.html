@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Pagination</title>
+</head>
+ 
+<body>
+  <div class="container">
+    <div class="form-row">
+      <div class="form-group col-md-8">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+      </div>
+      <div class="form-group col-md-4">
+        <select id="inputState" class="form-control">
+          <option >Par identifiant</option>
+          <option selected>Par nom de societe</option>
+          <option >Par adresse</option>
+          <option >Par télephone</option>
+        </select>
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Identifiant</th>
+          <th>Nom Société</th>
+          <th>Adresse</th>
+          <th>Téléphone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="tableClient">
+      </tbody>
+    </table>
+    <div id="zonePagination">
+      <button class="btn btn-outline-primary" id="btnFirstPage">|<</button>
+      <button class="btn btn-outline-primary" id="btnPrevious"><</button>
+      <span id="pageInfo"></span>
+      <button class="btn btn-outline-primary" id="btnNextPage" >></button>
+      <button class="btn btn-outline-primary" id ="btnLastPage">>|</button>
+    </div>
+  </div>
+  <script type="module" src="code.js"></script>
+</body>
+</html>
