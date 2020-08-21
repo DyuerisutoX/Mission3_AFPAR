@@ -2,7 +2,7 @@
     font-family: 'anime';
     src: url(./font/JandaManateeSolid.ttf);
   }
-* Sidebar */
+/* Sidebar */
 #sidebar {
     transition: all 0.3s;
     padding: 2em;
