@@ -15,7 +15,7 @@ function afficherliste() {
     var prix;
     var src;
 
-    if (album === undefined) {
+    /* if (album === undefined) {
       serie = "";
 			numero = "";
 			titre = "";
@@ -23,8 +23,9 @@ function afficherliste() {
       prix = 0;
 
       src = "images/noComics.jpeg"
-      
-		} else {
+
+    } else */ 
+    if (album !== undefined) {
 
 			var serie = series.get(album.idSerie);
 			var auteur = auteurs.get(album.idAuteur);
@@ -42,23 +43,25 @@ function afficherliste() {
       nomFic = nomFic.replace(/'|!|\?|\.|"|:|\$/g, "");
 
       src = "albums/" + nomFic + ".jpg"
-    }  
-    data += 
+
+      data += 
     `<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3">
-      <div class="card produit">
-        <img class="card-img-top img-thumbnail" src="${src}" alt="Card image cap">
+      <div class="card produit border border-dark ">
+        <img class="card-img-top" src="${src}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">${titre}</h5>
-          <p class="card-text" id="serie"> Serie : ${serie}</p>
-          <p class="card-text" id="numero"> Numero : ${numero}</p>
-          <p class="card-text" id="auteur"> Auteur : ${auteur}</p>
-          <p class="card-text" id="prix"> Prix : ${prix}€</p>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <button type="button" class="btn btn-primary ajout">
-          <i class="fas fa-cart-plus"></i></button>
+          <p class="card-text" id="serie">
+             Serie : ${serie} <hr>
+             Numero : ${numero} <hr>
+             Auteur : ${auteur} <hr>
+             Prix : ${prix}€
+          </p>
+          <button type="button" class="btn btn-primary btn-block"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
         </div>
       </div>
     </div>`;
+    }  
+    
   }
   if (data.length > 0) {
     // Affichage des données dans le tableau

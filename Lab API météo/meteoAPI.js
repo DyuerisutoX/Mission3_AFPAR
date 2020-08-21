@@ -5,7 +5,8 @@ $( document ).ready(function() {
     var latitude;
     var longitude;
     var url;
-    var x = $("#demo")
+    var x = $("#demo");
+    $("#button").hide();
     if (navigator.geolocation) {
         /* function showPosition(position) {
             latitude = position.coords.latitude
@@ -14,9 +15,11 @@ $( document ).ready(function() {
         navigator.geolocation.getCurrentPosition(function (position) {
             latitude = position.coords.latitude
             longitude = position.coords.longitude
+            console.log( latitude, longitude)
         });
     } else {
         x.html("Geolocalisation désactivé")
+        $("#button").show()
     }
     $("#button").click(function() {
             url = "https://api.openweathermap.org/data/2.5/weather?lat="+ latitude + "&lon="+ longitude + "&appid=65372f0a54dd75934920a83319e364a6&lang=fr&units=metric"
@@ -27,7 +30,7 @@ $( document ).ready(function() {
             }).fail(function() {
                 x.html("Méteo indisponible pour le moment")
             })
-            $.ajax({
+/*             $.ajax({
                 url : url,
                 type : "GET",
                 dataType : "json",
@@ -39,6 +42,6 @@ $( document ).ready(function() {
                 error : function () {
                     x.html("Méteo indisponible pour le moment")
                 }
-            })
+            }) */
     })
 })

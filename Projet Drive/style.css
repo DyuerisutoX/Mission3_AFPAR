@@ -1,9 +1,10 @@
+/* Sidebar */
 #sidebar {
     transition: all 0.3s;
     padding: 2em;
     color: #fff;
 }
-
+/* Formulaire connexion */
 .inline-form {
     /* max-width: 500px; */
     width: 45%;
@@ -20,48 +21,25 @@
 .mdpPerdu {
     margin-bottom: 0.5em;
 }
-/* .form-control {
-    border-radius: 30px;
-} */
+
+/* Contenu de la page */
 .wrapper {
     align-items: stretch;
     display: flex;
     width: 100%;
 }
-#sidebar.active {
-    margin-left: -250px;
-}
 #content {
     width: 100%;
 }
-/* @media (max-width: 768px) {
-    #sidebar {
-        margin-left: -250px;
-    }
-    #sidebar.active {
-        margin-left: 0;
-    }
-} */
+/* BD */
 .produit { 
     position: relative;
     padding: 0.1em;
-}
-.bd {
-    margin: 0.5em;
-    border-radius: 20px;
-    height: 200px;
-    text-align: center;
+    margin-bottom: 1em;
 }
 
-.ajout {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-.imageLivre {
-    height: 170px;
-}
 
+/* Panier */
 .dropdown-menu {
     margin-top:1em ;
     padding: 1em;
@@ -95,12 +73,7 @@
 .range-field input {
     width: 100%;
 }  
-
-.thead-dark th {
-    border: 0;
-    border-bottom: 0;
-    border-top: 0;
-}  
+ 
 .dropdown-toggle::after {
     display: none
 }
