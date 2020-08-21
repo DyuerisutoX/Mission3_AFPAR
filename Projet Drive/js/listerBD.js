@@ -72,7 +72,7 @@ function afficherliste(albums) {
   }
 }
 
-// affiche le tableau de client
+// affiche la liste de tout les bd
 afficherliste(albums)
 
 // rechercher un client par nom de societe
@@ -102,10 +102,10 @@ afficherliste(albums)
   </div>
 </div> */}
 
-function prbImg(element) {
+/* function prbImg(element) {
   // console.log(element);
   if (element.id === "albumMini")
     element.src = albumDefaultMini;
   else element.src = albumDefault;
 
-}
+} */

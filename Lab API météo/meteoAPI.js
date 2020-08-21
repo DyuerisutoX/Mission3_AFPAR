@@ -24,6 +24,7 @@ $( document ).ready(function() {
     $("#button").click(function() {
             url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=65372f0a54dd75934920a83319e364a6&lang=fr&units=metric`
             $.get(url, function(data) {
+                console.log(data)
                 x.html(`La temperature de ${data.name} est de ${data.main.temp}°C, c'est un temp ${data.weather[0].description}`)
                 var imgUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
                 $( "#img").attr("src", imgUrl)
