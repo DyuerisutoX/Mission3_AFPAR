@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- CSS  BOOTSTRAP-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- CSS Perso -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- JS -->
+    <!-- JS BOOTSTRAP-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" 
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <!-- JS FONT AWESOME -->
     <script src="https://kit.fontawesome.com/efcb5b7b29.js" crossorigin="anonymous"></script>
 
   </head>
@@ -192,8 +192,8 @@
         </div>
       </div>
       <!-- PARTIE DROITE CONTENU -->
-      <div id="content">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div id="content bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light ">
           <div class="container-fluid ">
               <select class="form-control ml-auto tri">
                 <option value="defaut" disabled selected>Trier</option>
@@ -205,10 +205,10 @@
         </nav>
         <div class="container-fluid">
           <!-- 1ère row: 12 col -->
-          <div class="row bg-light" id="listeBD">
+          <div class="row" id="listeBD">
           </div>
         </div>
-        <div class="container-fluid bg-light">
+        <div class="container-fluid">
           <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center justify-content-md-end">
               <li class="page-item disabled">
@@ -253,9 +253,8 @@
           <div class="col-sm-12 col-md-3 mx-auto mb-4">
             <h6 class="text-uppercase font-weight-bold">Météo d'aujourd'hui</h6>
             <div class="divider-small mb-3"></div>
-            <p>
-              Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,consectetur adipisicing elit.
-            </p>
+            <p id="meteo"></p>
+            <img  id="imgMeteo">
           </div>
           <div class="col-sm-4 col-md-3 mx-auto mb-4">
             <h6 class="text-uppercase font-weight-bold">Qui sommes nous</h6>
@@ -315,4 +314,6 @@
   <script src="./data/albums.js"></script>
   <script src="./data/auteurs.js"></script>
   <script src="./data/series.js"></script>
+  <script src="./js/jquery.js"></script>
+  <script src="./js/meteoAPI.js"></script>
 </html>

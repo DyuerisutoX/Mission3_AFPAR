@@ -2,39 +2,33 @@ function afficherliste(albums) {
   // Récupération de l'élement
   const elApp = document.getElementById("listeBD");
   elApp.innerHTML = "";
-
   let data = "";
   // Récupération des données
   for (let i of albums) {
-    
     var album = albums.get(String(i[0]))
     var serie;
-    var numero;
     var titre;
     var auteur;
+    var numero;
     var prix;
-    var src;
-
     /* if (album === undefined) {
       serie = "";
 			numero = "";
 			titre = "";
 			auteur = "";
       prix = 0;
-
       src = "images/noComics.jpeg"
-
     } else */ 
     if (album !== undefined) {
 
-			var serie = series.get(album.idSerie);
-			var auteur = auteurs.get(album.idAuteur);
+      var serie = series.get(album.idSerie);
+      var auteur = auteurs.get(album.idAuteur);
 
-			serie = serie.nom;
-			numero = album.numero;
+      serie = serie.nom;
       titre = album.titre;
-			auteur = auteur.nom;
+      auteur = auteur.nom;
       prix = album.prix;
+      numero = album.numero
 
       var nomFic = serie + "-" + numero + "-" + titre;
     
@@ -42,26 +36,25 @@ function afficherliste(albums) {
       // les caractères non autorisés dans les noms de fichiers : '!?.":$
       nomFic = nomFic.replace(/'|!|\?|\.|"|:|\$/g, "");
 
-      src = "albums/" + nomFic + ".jpg"
+      var src = "albums/" + nomFic + ".jpg"
 
       data += 
-    `<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3">
-      <div class="card produit border border-dark ">
-        <img class="card-img-top" src="${src}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">${titre}</h5>
-          <p class="card-text" id="serie">
-             Serie : ${serie} <hr>
-             Numero : ${numero} <hr>
-             Auteur : ${auteur} <hr>
-             Prix : ${prix}€
-          </p>
-          <button type="button" class="btn btn-primary btn-block"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
+      `<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3">
+        <div class="card produit border border-dark ">
+          <img class="card-img-top" src="${src}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">${titre}</h5>
+            <p class="card-text" id="serie">
+               Serie : ${serie} <hr>
+               Numero : ${numero} <hr>
+               Auteur : ${auteur} <hr>
+               Prix : ${prix}€
+            </p>
+            <button type="button" class="btn btn-primary btn-block"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
+          </div>
         </div>
-      </div>
-    </div>`;
-    }  
-    
+      </div>`;
+    }   
   }
   if (data.length > 0) {
     // Affichage des données dans le tableau
@@ -72,7 +65,7 @@ function afficherliste(albums) {
   }
 }
 // affiche la liste de tout les bd
-/* afficherliste(albums) */
+afficherliste(albums)
 
 // tri du - cher au + cher
 var albumsTriCroisssant = new Map([...albums].sort(([k, v], [k2, v2])=> {
@@ -99,7 +92,7 @@ var albumsTriDecroissant = new Map([...albums].sort(([cle, valeur], [cle2, valeu
 }));
 /* console.log(albumsTriDecroissant) */
 // recherche
-var recherche = "sens"
+var recherche = "x"
 var albumsRecherche = new Map([...albums].filter(([cle, valeur]) => valeur.titre.includes(recherche)))
 /* console.log(albumsRecherche) */
 
@@ -110,6 +103,17 @@ var albumsRecherche = new Map([...albums].filter(([cle, valeur]) => valeur.titre
       );
     afficherliste(filteredData);
   }); */
+
+
+
+
+
+
+
+
+
+
+
 
 
 {/* <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3">
