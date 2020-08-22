@@ -4,63 +4,34 @@ function afficherliste(albums) {
   elApp.innerHTML = "";
   let data = "";
   // Récupération des données
-  for (let i of albums) {
-    var album = albums.get(String(i[0]))
-    var serie;
-    var titre;
-    var auteur;
-    var numero;
-    var prix;
-    /* if (album === undefined) {
-      serie = "";
-			numero = "";
-			titre = "";
-			auteur = "";
-      prix = 0;
-      src = "images/noComics.jpeg"
-    } else */ 
-    if (album !== undefined) {
-
-      var serie = series.get(album.idSerie);
-      var auteur = auteurs.get(album.idAuteur);
-
-      serie = serie.nom;
-      titre = album.titre;
-      auteur = auteur.nom;
-      prix = album.prix;
-      numero = album.numero
-
-      var nomFic = serie + "-" + numero + "-" + titre;
-    
-      // Utilisation d'une expression régulière pour supprimer 
-      // les caractères non autorisés dans les noms de fichiers : '!?.":$
-      nomFic = nomFic.replace(/'|!|\?|\.|"|:|\$/g, "");
-
-      var src = "albums/" + nomFic + ".jpg"
-
-      data += 
-      `<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3">
-        <div class="card produit border border-dark ">
-          <img class="card-img-top" src="${src}" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">${titre}</h5>
-            <p class="card-text" id="serie">
-               Serie : ${serie} <hr>
-               Numero : ${numero} <hr>
-               Auteur : ${auteur} <hr>
-               Prix : ${prix}€
-            </p>
-            <button type="button" class="btn btn-primary btn-block"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
-          </div>
+  albums.forEach(album => {
+    var serie = series.get(album.idSerie);
+    var auteur = auteurs.get(album.idAuteur);
+    var nomFic = serie.nom + "-" + album.numero + "-" + album.titre;
+    nomFic = nomFic.replace(/'|!|\?|\.|"|:|\$/g, "");
+    var src = "albums/" + nomFic + ".jpg";
+    data += 
+    ` 
+    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3">
+      <div class="card produit border border-dark ">
+        <img class="card-img-top" src="${src}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">${album.titre}</h5>
+          <p class="card-text" id="serie">
+            Serie : ${serie.nom} <hr>
+            Numero : ${album.numero} <hr>
+            Auteur : ${auteur.nom} <hr>
+            Prix : ${album.prix}€
+          </p>
+          <button type="button" class="btn btn-primary btn-block"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
         </div>
-      </div>`;
-    }   
-  }
+      </div>
+    </div>
+    `;
+  })
   if (data.length > 0) {
-    // Affichage des données dans le tableau
     elApp.innerHTML += data;
   } else {
-    // Aucune donnée
     elApp.innerHTML += "Aucune BD trouvée";
   }
 }
@@ -78,7 +49,6 @@ var albumsTriCroisssant = new Map([...albums].sort(([k, v], [k2, v2])=> {
   return 0; 
 }));
 /* console.log(albumsTriCroisssant) */
-/* afficherliste(albumsTriCroisssant) */
 
 // tri du + cher au - cher
 var albumsTriDecroissant = new Map([...albums].sort(([cle, valeur], [cle2, valeur2])=> {
@@ -91,6 +61,7 @@ var albumsTriDecroissant = new Map([...albums].sort(([cle, valeur], [cle2, valeu
   return 0; 
 }));
 /* console.log(albumsTriDecroissant) */
+
 // recherche
 var recherche = "x"
 var albumsRecherche = new Map([...albums].filter(([cle, valeur]) => valeur.titre.includes(recherche)))
@@ -103,18 +74,6 @@ var albumsRecherche = new Map([...albums].filter(([cle, valeur]) => valeur.titre
       );
     afficherliste(filteredData);
   }); */
-
-
-
-
-
-
-
-
-
-
-
-
 
 {/* <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3">
   <div class="produit">
