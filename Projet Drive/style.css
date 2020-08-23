@@ -32,15 +32,7 @@
     display: flex;
     width: 100%;
 }
-#content {
-    width: 100%;
-}
 /* BD */
-.produit { 
-    position: relative;
-    padding: 0.1em;
-    margin-bottom: 1em;
-}
 
 
 /* Panier */

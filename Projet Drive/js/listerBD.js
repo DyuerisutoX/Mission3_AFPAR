@@ -12,16 +12,16 @@ function afficherliste(albums) {
     var src = "albums/" + nomFic + ".jpg";
     data += 
     ` 
-    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3">
-      <div class="card produit border border-dark ">
-        <img class="card-img-top" src="${src}" alt="Card image cap">
+    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4">
+      <div class="card border border-dark h-100 ">
+        <img class="card-img-top" src="${src}" alt="${album.titre}">
         <div class="card-body">
           <h5 class="card-title">${album.titre}</h5>
           <p class="card-text" id="serie">
             Serie : ${serie.nom} <hr>
             Numero : ${album.numero} <hr>
             Auteur : ${auteur.nom} <hr>
-            Prix : ${album.prix}€
+            Prix : ${album.prix} €
           </p>
           <button type="button" class="btn btn-primary btn-block"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
         </div>
