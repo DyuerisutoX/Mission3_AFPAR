@@ -2,12 +2,6 @@
     font-family: 'anime';
     src: url(./font/JandaManateeSolid.ttf);
   }
-/* Sidebar */
-#sidebar {
-    transition: all 0.3s;
-    padding: 2em;
-    color: #fff;
-}
 /* Formulaire connexion */
 .inline-form {
     /* max-width: 500px; */

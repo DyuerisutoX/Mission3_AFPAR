@@ -151,40 +151,50 @@
     <!-- CONTENU -->
     <div class="wrapper">
       <!-- PARTIE GAUCHE CONTENU -->
-      <div class="col-lg-3 col-md-3 col-sm-4 col-xl-2 p-4 text-white bg-dark d-none d-sm-none d-md-block" id="sidebar">
-        <div class="mb-5">
-          <h5 class="font-weight-bold mb-3">Categorie</h5>
-          <div class="divider-small mb-3"></div>
-          <div class="form-check mb-2">
-            <input type="radio" class="form-check-input" id="materialGroupExample1" name="groupOfMaterialRadios">
-            <label class="form-check-label" for="materialGroupExample1">Tout</label>
-          </div>
-          <div class="form-check mb-2">
-            <input type="radio" class="form-check-input" id="materialGroupExample2" name="groupOfMaterialRadios"
-              checked>
-            <label class="form-check-label" for="materialGroupExample2">Science - fiction</label>
-          </div>
-          <div class="form-check mb-2">
-            <input type="radio" class="form-check-input" id="materialGroupExample3" name="groupOfMaterialRadios">
-            <label class="form-check-label" for="materialGroupExample3">Manga</label>
-          </div>
-          <div class="form-check mb-2">
-            <input type="radio" class="form-check-input" id="materialGroupExample4" name="groupOfMaterialRadios">
-            <label class="form-check-label" for="materialGroupExample4">Comics</label>
-          </div>
+      <div class="col-lg-3 col-md-3 col-sm-4 col-xl-2 p-4 text-white bg-dark d-none d-md-block">
+        <div class=" mb-5 d-flex justify-content-center">
+          <h1>Filtre</h1>
         </div>
         <div class="mb-5">
-          <h5 class="font-weight-bold mb-3">Prix</h5>
+          <h5 class="font-weight-bold mb-3">Par auteur</h5>
+          <div class="divider-small mb-3"></div>
+          <form>
+            <select class="form-control">
+              <option value="0" disabled selected>Auteurs</option>
+              <option value="1" >Franquin</option>
+              <option value="2" >Batem</option>
+              <option value="3" >Colman</option>
+              <option value="4" >Tome</option>
+              <option value="5" >Janry</option>
+            </select>
+          </form>
+        </div>
+        <div class="mb-5">
+          <h5 class="font-weight-bold mb-3">Par serie</h5>
+          <div class="divider-small mb-3"></div>
+          <form>
+            <select class="form-control">
+              <option value="0" disabled selected>serie</option>
+              <option value="1" >Titeuf</option>
+              <option value="2" >Marsupilami</option>
+              <option value="3" >Kran</option>
+              <option value="4" >Spirou et Fantasio</option>
+              <option value="5" >Les aventures de Tintin</option>
+            </select>
+          </form>
+        </div>
+        <div class="mb-5">
+          <h5 class="font-weight-bold mb-3">Par prix</h5>
           <div class="divider-small mb-3"></div>
           <form class="range-field">
             <input type="range" min="0" max="319" />
           </form>
           <div class="row justify-content-center">
             <div class="col-md-6 text-left">
-              <p class="dark-grey-text"><strong id="resellerEarnings">0€</strong></p>
+              <p class="dark-grey-text"><strong id="resellerEarnings"></strong></p>
             </div>
             <div class="col-md-6 text-right">
-              <p class="dark-grey-text"><strong id="clientPrice">319€</strong></p>
+              <p class="dark-grey-text"><strong id="clientPrice"></strong></p>
             </div>
           </div>
         </div>
@@ -228,20 +238,6 @@
           <div class="col-md-12 col-lg-5 text-center text-md-left mb-4 mb-md-0">
             <h6 class="mb-0">Suivez nous sur nos reseaux sociaux</h6>
           </div>
-<!--      <div>
-            <ul class="list-unstyled list-inline text-center">
-              <li class="list-inline-item">
-                <a class="btn-floating btn-fb mx-1">
-                  <i class="fab fa-facebook-f"> </i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn-floating btn-tw mx-1">
-                  <i class="fab fa-twitter"> </i>
-                </a>
-              </li>
-            </ul>
-          </div> -->
         </div>
       </div>
       <div class="container text-sm-left mt-5">
@@ -306,10 +302,10 @@
       </div>
     </footer>
   </body>
-  <script type="module" src="./js/listerBD.js"></script>
   <script src="./data/albums.js"></script>
   <script src="./data/auteurs.js"></script>
   <script src="./data/series.js"></script>
+  <script src="./js/listerBD.js"></script>
   <script src="./js/jquery.js"></script>
   <script src="./js/meteoAPI.js"></script>
 </html>

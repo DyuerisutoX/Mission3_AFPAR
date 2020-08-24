@@ -1,14 +1,22 @@
 function afficherliste(albums) {
   // Récupération de l'élement
-  const elApp = document.getElementById("listeBD");
-  elApp.innerHTML = "";
+  const elApp = $("#listeBD");
+  elApp.html("")
   let data = "";
+  console.log()
+  var prixMax = parseFloat(albums.values().next().value.prix);
+  var prixMin = prixMax
   // Récupération des données
   albums.forEach(album => {
     var serie = series.get(album.idSerie);
     var auteur = auteurs.get(album.idAuteur);
     var nomFic = serie.nom + "-" + album.numero + "-" + album.titre;
     nomFic = nomFic.replace(/'|!|\?|\.|"|:|\$/g, "");
+    if (parseFloat(album.prix) > prixMax) {
+      prixMax = parseFloat(album.prix)
+    } else if (parseFloat(album.prix) < prixMin) {
+      prixMin = parseFloat(album.prix)
+    }
     var src = "albums/" + nomFic + ".jpg";
     data += 
     ` 
@@ -30,9 +38,13 @@ function afficherliste(albums) {
     `;
   })
   if (data.length > 0) {
-    elApp.innerHTML += data;
+    elApp.html(data)
+    $("#resellerEarnings").html(prixMin + " €")
+    $("#clientPrice").html(prixMax + " €")
+
+
   } else {
-    elApp.innerHTML += "Aucune BD trouvée";
+    elApp.html("Aucune BD trouvée")
   }
 }
 // affiche la liste de tout les bd
