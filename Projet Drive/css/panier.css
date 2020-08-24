@@ -174,4 +174,5 @@
 .fa.fa-trash{
     color: red;
     float: right;
+    cursor: pointer;
 }
