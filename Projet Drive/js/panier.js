@@ -1,4 +1,9 @@
 $(document).ready(function (){
+
+    let ajout = 1;
+    let reduction = 1;
+
+
     //Suprime le produit de la liste
     $('.table tbody').on('click', '.btn', function () {
         $(this).closest('tr').remove();
@@ -10,32 +15,46 @@ $(document).ready(function (){
         $('tbody').remove();
     });
 
-    // $('.table tbody').on('click', '.qtyplus', function () {
-
-    //     $(this).closest('.qty').css({"backgroung-color": "blue"});
-
-    //     // let qnt = document.getElementsByClassName('qty');
-    //     // test = qnt;
-    //     // console.log(test);
-
-    //     // qnt = $(this).closest('input').getElementsByClassName('qty');
-    //     // qnt = document.getElementsByClassName('qty');
-    //     // console.log($(this).closest('input'));
-    //     // console.log(qnt.value)
-    //     // console.log(parseInt(qnt[0].value) + 1);
-    //     // $(this).closest('input').remove('input' + 1);
+    //Augmente la quantité
+    $('.table tbody ').on('click', '.qtyplus', function () {
         
 
-    // });
-
-    // let price = document.getElementsByClassName('price');
-    // let qnt = document.getElementsByClassName('qty');
-    // let total = price[0];
-
-    // console.log(price[0].innerText);
-    // console.log(qnt);
-    // console.log(total);
     
+        let incrementation = parseInt($('.qty').attr('value'));
+        qntAugmen = incrementation + ajout;
+        $('.qty').attr('value', qntAugmen);
+        
+
+        // $(this).closest('tr').qntAugmenter();
+        
+    });
+
+        
+
+    
+
+    $('.table tbody').on('click', '.qtyminus', function () {
+
+        qntActuelle = parseInt($('.qty').attr('value'));
+
+        if (qntActuelle > 1)
+        {
+            let decrementation = parseInt($('.qty').attr('value'));
+            qntDiminuer = decrementation - reduction;
+            $('.qty').attr('value', qntDiminuer);
+        }
+                  
+
+        
+    });
 
 
 })
+
+// function qntAugmenter() 
+// {
+//     let incrementation = parseInt($('.qty').attr('value'));
+//     qntAugmen = incrementation + ajout;
+//     $('.qty').attr('value', qntAugmen);
+
+// }
