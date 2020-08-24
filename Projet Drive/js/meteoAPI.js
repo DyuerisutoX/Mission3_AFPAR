@@ -17,7 +17,6 @@ if (navigator.geolocation) {
 } else {
     x.html("Geolocalisation désactivé")   
 }
-
 $( document ).ready(function() {
     if (latitude !== undefined) {
         var url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=65372f0a54dd75934920a83319e364a6&lang=fr&units=metric`

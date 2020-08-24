@@ -1,7 +1,8 @@
 $(document) .ready(function () {
     $(".dropdown-toggle").hover(function() {
         $(".dropdown-toggle").dropdown('show')
-    }, function () {
+    })
+    $(".dropdown-menu").mouseout(function() {
         $(".dropdown-toggle").dropdown('hide')
     })
 })

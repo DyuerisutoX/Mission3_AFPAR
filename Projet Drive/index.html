@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- JS FONT AWESOME -->
-    <script src="https://kit.fontawesome.com/efcb5b7b29.js" crossorigin="anonymous"></script>
+<!--     <script src="https://kit.fontawesome.com/efcb5b7b29.js" crossorigin="anonymous"></script> -->
 
     <!-- JS BOOTSTRAP-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
@@ -27,7 +27,7 @@
   </head>
   <body>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-primary">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top border-bottom border-primary">
       <!-- LOGO -->
       <a class="navbar-brand" href="index.html">
         <img src="./media/comicv2.png" alt="Logo" width="30"> BD Store
@@ -49,24 +49,18 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Actu BD</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">La communauté</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#">Forum</a>
-          </li>
         </ul>
         <!-- PARTIE DROITE NAVBAR-->
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-user"></i> Compte</a>
           </li>
-          <li class="nav-item d-lg-none">
+          <li class="nav-item d-md-none">
             <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> Panier <span class="badge badge-primary"> 0 </span></a>
           </li>
         </ul>
         <!-- PANIER -->
-        <div class="dropdown d-none d-lg-block">
+        <div class="dropdown d-none d-md-block">
           <button class="btn btn-primary dropdown-toggle" type="button" id="panier" data-toggle="dropdown">
             <i class="fas fa-shopping-cart"></i> Panier <span class="badge badge-primary"> 0 </span>
           </button>
@@ -109,7 +103,7 @@
                   </tbody>
                 </table>
               </div>
-              <button type="button" class="btn btn-primary btn-block">Voir panier</button> 
+              <button type="button" class="btn btn-primary btn-block"><a href="panier.html">Voir panier</a></button> 
           </div>
         </div>
       </div>
@@ -249,59 +243,37 @@
             <h6 class="text-uppercase font-weight-bold">Météo d'aujourd'hui</h6>
             <div class="divider-small mb-3"></div>
             <p id="meteo"></p>
-            <img  id="imgMeteo">
+            <img id="imgMeteo">
           </div>
           <div class="col-sm-4 col-md-3 mx-auto mb-4">
             <h6 class="text-uppercase font-weight-bold">Qui sommes nous</h6>
            <div class="divider-small mb-3 d-none d-sm-block"></div>
-            <p>
-              <a href="#!">Gérer mes cookies</a>
-            </p>
-            <p>
-              <a href="#!">Mentions légales</a>
-            </p>
-            <p>
-              <a href="#!">CGU Avis clients</a>
-            </p>
-            <p>
-              <a href="#!">CGV / Marketplace</a>
-            </p>
+            <p><a href="#!">Gérer mes cookies</a></p>
+            <p><a href="#!">Mentions légales</a></p>
+            <p><a href="#!">CGU Avis clients</a></p>
+            <p><a href="#!">CGV / Marketplace</a></p>
     
           </div>
           <div class="col-sm-4 col-md-3 mx-auto mb-4">
             <h6 class="text-uppercase font-weight-bold">BESOIN D'AIDE</h6>
             <div class="divider-small mb-3 d-none d-sm-block"></div>
-            <p>
-              <a href="#!">Questions fréquentes</a>
-            </p>
-            <p>
-              <a href="#!">Modes de règlement</a>
-            </p>
-            <p>
-              <a href="#!">Suivi de commande</a>
-            </p>
-            <p>
-              <a href="#!">Garantie et retour d'article</a>
-            </p>
-    
+            <p><a href="#!">Questions fréquentes</a></p>
+            <p><a href="#!">Modes de règlement</a></p>
+            <p><a href="#!">Suivi de commande</a></p>
+            <p><a href="#!">Garantie et retour d'article</a></p>
           </div>
           <div class="col-sm-4 col-md-3 mx-auto mb-md-0 mb-4">
             <h6 class="text-uppercase font-weight-bold">Contact</h6>
             <div class="divider-small mb-3 d-none d-sm-block"></div>
-            <p>
-              New York, NY 10012, US</p>
-            <p>
-              info@example.com</p>
-            <p>
-              + 01 234 567 88</p>
-            <p>
-              + 01 234 567 89</p>
-    
+            <p>New York, NY 10012, US</p>
+            <p>info@example.com</p>
+            <p>+ 01 234 567 88</p>
+            <p>+ 01 234 567 89</p>
           </div>
         </div>
       </div>
       <div class="footer-copyright text-center py-3">© 2020 Copyright:
-        <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+        <a href=""> Afpar </a>
       </div>
     </footer>
   </body>
@@ -310,6 +282,6 @@
   <script src="./data/auteurs.js"></script>
   <script src="./data/series.js"></script>
   <script src="./js/listerBD.js"></script>
-  <script src="./js/meteoAPI.js"></script>
   <script src="./js/jquery.js"></script>
+  <script src="./js/meteoAPI.js"></script>
 </html>
