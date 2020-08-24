@@ -29,8 +29,8 @@ function afficherliste(albums) {
             Serie : ${serie.nom} <hr>
             Numero : ${album.numero} <hr>
             Auteur : ${auteur.nom} <hr>
-            Prix : ${album.prix} €
           </p>
+            <p class="prix">${album.prix} €</p>
           <button type="button" class="btn btn-primary ajout"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
         </div>
       </div>
