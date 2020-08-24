@@ -31,7 +31,7 @@ function afficherliste(albums) {
             Auteur : ${auteur.nom} <hr>
             Prix : ${album.prix} €
           </p>
-          <button type="button" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
+          <button type="button" class="btn btn-primary ajout"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
         </div>
       </div>
     </div>

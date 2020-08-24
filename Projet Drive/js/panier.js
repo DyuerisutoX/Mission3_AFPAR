@@ -1,8 +1,10 @@
-$(document) .ready(function () {
-    $(".dropdown-toggle").hover(function() {
-        $(".dropdown-toggle").dropdown('show')
-    })
-    $(".dropdown-menu").mouseout(function() {
-        $(".dropdown-toggle").dropdown('hide')
+
+$(document).ready(function () {
+    // ajout Panier
+    $('.ajout').each(function() {
+        $(this).on('click',function() {
+            console.log("ajouter au panier")
+        })
     })
 })
+// Supression panier

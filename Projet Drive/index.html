@@ -56,13 +56,13 @@
             <a class="nav-link" href="#"><i class="fas fa-user"></i> Compte</a>
           </li>
           <li class="nav-item d-md-none">
-            <a class="nav-link" href="panier.html"><i class="fas fa-shopping-cart"></i> Panier <span class="badge badge-primary"> 0 </span></a>
+            <a class="nav-link" href="panier.html"><i class="fas fa-shopping-cart"></i> Panier <span class="badge badge-primary"> 3 </span></a>
           </li>
         </ul>
         <!-- PANIER -->
         <div class="dropdown d-none d-md-block">
           <button class="btn btn-primary dropdown-toggle" type="button" id="panier" data-toggle="dropdown">
-            <i class="fas fa-shopping-cart"></i> Panier <span class="badge badge-primary"> 0 </span>
+            <i class="fas fa-shopping-cart"></i> Panier <span class="badge badge-primary"> 3 </span>
           </button>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="panier">
               <div class="d-flex justify-content-between">
@@ -83,22 +83,19 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>John</td>
-                      <td><input type="number" size="1" value="1"></td>
+                      <td><img src="./albums/Arkezone-01-Le dôme.jpg" width="50px" height="auto" alt=""></td>
+                      <td><input type="number" disabled value="1"></td>
                       <td>20.99€</td>
-                      <td><button type="button" class="btn btn-danger"><i class="fas fa-times"></i></button></td>
                     </tr>
                     <tr>
-                      <td>Mary</td>
-                      <td><input type="number" value="1"></td>
+                      <td><img src="./albums/Astérix-21-Le cadeau de César.jpg" width="50px" height="auto" alt=""></td>
+                      <td><input type="number" disabled value="1"></td>
                       <td>20.99€</td>
-                      <td><button type="button" class="btn btn-danger"><i class="fas fa-times"></i></button></td>
                     </tr>
                     <tr>
-                      <td>July</td>
-                      <td><input type="number" value="1"></td>
+                      <td><img src="./albums/Boule et bill-26-Faut rigoler .jpg" width="50px" height="auto" alt=""></td>
+                      <td><input type="number" disabled value="1"></td>
                       <td>250.99€</td>
-                      <td><button type="button" class="btn btn-danger"><i class="fas fa-times"></i></button></td>
                     </tr>
                   </tbody>
                 </table>
@@ -277,11 +274,12 @@
       </div>
     </footer>
   </body>
-  <script src="./js/panier.js"></script>
+
   <script src="./data/albums.js"></script>
   <script src="./data/auteurs.js"></script>
   <script src="./data/series.js"></script>
   <script src="./js/listerBD.js"></script>
   <script src="./js/jquery.js"></script>
+  <script src="./js/panier.js"></script>
   <script src="./js/meteoAPI.js"></script>
 </html>
