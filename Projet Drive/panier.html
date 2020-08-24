@@ -4,12 +4,13 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>Panier</title>
     <!-- CSS  BOOTSTRAP-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- CSS Perso -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/panier.css">
 
     <!-- JS BOOTSTRAP-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
@@ -103,7 +104,7 @@
                   </tbody>
                 </table>
               </div>
-              <a href="panier.html"><button type="button" class="btn btn-primary btn-block">Voir panier</button> </a>
+              <button type="button" class="btn btn-primary btn-block">Voir panier</button> 
           </div>
         </div>
       </div>
@@ -146,77 +147,135 @@
       </a>
     </div>
     <!-- CONTENU -->
-    <div class="wrapper">
-      <!-- PARTIE GAUCHE CONTENU -->
-      <div class="col-lg-3 col-md-3 col-sm-4 col-xl-2 p-4 text-white bg-dark d-none d-sm-none d-md-block" id="sidebar">
-        <div class="mb-5">
-          <h5 class="font-weight-bold mb-3">Categorie</h5>
-          <div class="divider-small mb-3"></div>
-          <div class="form-check mb-2">
-            <input type="radio" class="form-check-input" id="materialGroupExample1" name="groupOfMaterialRadios">
-            <label class="form-check-label" for="materialGroupExample1">Tout</label>
-          </div>
-          <div class="form-check mb-2">
-            <input type="radio" class="form-check-input" id="materialGroupExample2" name="groupOfMaterialRadios"
-              checked>
-            <label class="form-check-label" for="materialGroupExample2">Science - fiction</label>
-          </div>
-          <div class="form-check mb-2">
-            <input type="radio" class="form-check-input" id="materialGroupExample3" name="groupOfMaterialRadios">
-            <label class="form-check-label" for="materialGroupExample3">Manga</label>
-          </div>
-          <div class="form-check mb-2">
-            <input type="radio" class="form-check-input" id="materialGroupExample4" name="groupOfMaterialRadios">
-            <label class="form-check-label" for="materialGroupExample4">Comics</label>
-          </div>
-        </div>
-        <div class="mb-5">
-          <h5 class="font-weight-bold mb-3">Prix</h5>
-          <div class="divider-small mb-3"></div>
-          <form class="range-field">
-            <input type="range" min="0" max="319" />
-          </form>
-          <div class="row justify-content-center">
-            <div class="col-md-6 text-left">
-              <p class="dark-grey-text"><strong id="resellerEarnings">0€</strong></p>
-            </div>
-            <div class="col-md-6 text-right">
-              <p class="dark-grey-text"><strong id="clientPrice">319€</strong></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- PARTIE DROITE CONTENU -->
-      <div id="bg-light">
-        <nav class="navbar navbar-expand-lg navbar-light ">
-          <select class="form-control ml-auto tri ">
-            <option value="0" disabled selected>Trier</option>
-            <option value="1" >Par auteurs</option>
-            <option value="2" >Par Serie</option>
-            <option value="3" >Par désignation</option>
-            <option value="4" >Du - cher au + cher</option>
-            <option value="5" >Du + cher au - cher</option>
-          </select>
-        </nav>
+    <!-- Test Bootsnipp -->
+    <div class="cart-wrap">
         <div class="container-fluid">
-          <!-- 1ère row: 12 col -->
-          <div class="row" id="listeBD">
-          </div>
-          <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center justify-content-md-end">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">Precedent</a>
-              </li>
-              <li class="page-item active"><a class="page-link " href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">Suivant</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
+	        <div class="row">
+			    <div class="col-lg-9">
+			        <div class="main-heading">Shopping Cart</div>
+			        <div class="table-cart">
+	                    <table>
+	                        <thead>
+	                            <tr>
+	                                <th>Product</th>
+	                                <th>Quantity</th>
+	                                <th>Total</th>
+	                                <th><i class="fa fa-trash" aria-hidden="true"></i></th>
+	                            </tr>
+	                        </thead>
+	                        <tbody>
+	                            <tr>
+	                                <td>
+	                                	<div class="display-flex align-center">
+		                                    <div class="img-product">
+		                                        <img src="albumsMini/Blacksad-01-Quelque part entre les ombres.jpg" alt="Blacksad-01-Quelque part entre les ombres" class="mCS_img_loaded">
+		                                    </div>
+		                                    <div class="name-product">
+		                                        Blacksad - Quelque part entre les ombres
+		                                        <br>T01
+		                                    </div>
+		                                    <div class="price">
+		                                        12,50€
+                                            </div>
+                                            
+	                                    </div>
+	                                </td>
+	                                <td class="product-count">
+	                                    <form action="#" class="count-inlineflex">
+										    <div class="qtyminus">-</div>
+										    <input type="text" name="quantity" value="1" class="qty">
+										    <div class="qtyplus">+</div>
+										</form>
+	                                </td>
+	                                <td>
+	                                    <div class="total">
+	                                        12,50€
+	                                    </div>
+	                                </td>
+	                                <td>
+
+                                        <div class="remove">
+                                            <button type="button" class="btn btn-outline-danger">X</button>
+                                        </div>
+                                        
+	                                </td>
+	                            </tr>
+	                            <tr>
+	                                <td>
+	                                	<div class="display-flex align-center">
+		                                    <div class="img-product">
+		                                        <img src="albumsMini/Cristal-01-Venu dailleurs.jpg" alt="Cristal-01-Venu dailleurs" class="mCS_img_loaded">
+		                                    </div>
+		                                    <div class="name-product">
+		                                        Cristal - Venu dailleurs
+		                                        <br>T01
+		                                    </div>
+		                                    <div class="price">
+		                                        10,50€
+		                                    </div>
+	                                    </div>
+	                                </td>
+	                                <td class="product-count">
+	                                    <form action="#" class="count-inlineflex">
+										    <div class="qtyminus">-</div>
+										    <input type="text" name="quantity" value="1" class="qty">
+										    <div class="qtyplus">+</div>
+										</form>
+	                                </td>
+	                                <td>
+	                                    <div class="total">
+	                                        10,50€
+	                                    </div>
+	                                </td>
+	                                <td>
+
+                                        <div class="remove">
+                                            <button type="button" class="btn btn-outline-danger">X</button>
+                                        </div>
+
+	                                </td>
+	                            </tr>
+	                        </tbody>
+	                    </table>
+			        </div>
+			        <!-- /.table-cart -->
+			    </div>
+			    <!-- /.col-lg-8 -->
+			    <div class="col-lg-3">
+			        <div class="cart-totals">
+			            <h3>Cart Totals</h3>
+			            <form action="#" method="get" accept-charset="utf-8">
+			                <table>
+			                    <tbody>
+			                        <tr>
+			                            <td>Subtotal</td>
+			                            <td class="subtotal">22,50€</td>
+			                        </tr>
+			                        <tr>
+			                            <td>Shipping</td>
+			                            <td class="free-shipping">Free Shipping</td>
+			                        </tr>
+			                        <tr class="total-row">
+			                            <td>Total</td>
+			                            <td class="price-total">22,50€</td>
+			                        </tr>
+			                    </tbody>
+                            </table>
+                            
+                        <hr>
+
+			                <div class="btn-cart-totals">
+			                    <a href="#" class="checkout round-black-btn" title="Validation">Valider</a>
+			                </div>
+			                <!-- /.btn-cart-totals -->
+			            </form>
+			            <!-- /form -->
+			        </div>
+			        <!-- /.cart-totals -->
+			    </div>
+			    <!-- /.col-lg-4 -->
+			</div>
+		</div>
     </div>
     <!-- FOOTER DE LA PAGE -->
     <footer>
