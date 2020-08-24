@@ -1,5 +1,7 @@
-$( document ).ready(function() {
-    $("#panier").hover(function () {
-        $('.dropdown-toggle').dropdown('show')
+$(document) .ready(function () {
+    $(".dropdown-toggle").hover(function() {
+        $(".dropdown-toggle").dropdown('show')
+    }, function () {
+        $(".dropdown-toggle").dropdown('hide')
     })
 })
