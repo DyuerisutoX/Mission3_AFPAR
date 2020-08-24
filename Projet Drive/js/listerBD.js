@@ -73,10 +73,12 @@ var albumsTriDecroissant = new Map([...albums].sort(([cle, valeur], [cle2, valeu
 /* console.log(albumsTriDecroissant) */
 
 // recherche
-var recherche = "x"
+var recherche = "Marsupilami"
 var albumsRecherche = new Map([...albums].filter(([cle, valeur]) => valeur.titre.includes(recherche)))
-/* console.log(albumsRecherche) */
+console.log(albumsRecherche)
 
+var filtre = "Marsupilami"
+var albumsRecherche = new Map([...albums].filter(([cle, valeur]) => valeur.titre.includes(recherche)))
 
 /* function prbImg(element) {
   // console.log(element);
