@@ -66,4 +66,11 @@ $(document).ready(function () {
             `
         ) 
     }
+
+/*     $('.ajout').each(function() {
+        $(this).on('click',function() {
+            $('#ajoutPanier').modal('show')
+        })  
+    }) */
 })
+
