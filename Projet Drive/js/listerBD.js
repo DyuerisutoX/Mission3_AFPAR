@@ -77,10 +77,3 @@ afficherliste(albumsTriDecroissant) */
 var recherche = "Marsupilami"
 var albumsRecherche = new Map([...albums].filter(([cle, valeur]) => valeur.titre.includes(recherche)))
 /* console.log(albumsRecherche); */
-/* function prbImg(element) {
-  // console.log(element);
-  if (element.id === "albumMini")
-    element.src = albumDefaultMini;
-  else element.src = albumDefault;
-
-} */
