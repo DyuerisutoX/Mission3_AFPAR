@@ -1,9 +1,10 @@
 
 $(document).ready(function () {
-    var nbItemPanier = 0
 
+    var nbItemPanier = 0
     $('.ajout').each(function() {
         $(this).on('click',function() {
+
             // recuperation des informations
             var prix = $(this).parent().children('.prix').html();
             prix = prix.replace(/€| /g, "");
@@ -49,7 +50,7 @@ $(document).ready(function () {
             prix = prix.replace(/€| /g, "");
             prix = parseFloat(prix);
             total +=prix
-            total = total.toFixed(2)
+            /* total = total.toFixed(2) */
         })
         $('.total').html("Total : " + total + " €")
 
@@ -66,11 +67,4 @@ $(document).ready(function () {
             `
         ) 
     }
-
-/*     $('.ajout').each(function() {
-        $(this).on('click',function() {
-            $('#ajoutPanier').modal('show')
-        })  
-    }) */
 })
-
