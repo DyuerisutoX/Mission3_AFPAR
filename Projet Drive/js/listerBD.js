@@ -3,7 +3,6 @@ function afficherliste(albums) {
   const elApp = $("#listeBD");
   elApp.html("")
   let data = "";
-  console.log()
   var prixMax = parseFloat(albums.values().next().value.prix);
   var prixMin = prixMax
   // Récupération des données
@@ -18,6 +17,7 @@ function afficherliste(albums) {
       prixMin = parseFloat(album.prix)
     }
     var src = "albums/" + nomFic + ".jpg";
+
     data += 
     ` 
     <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3 mb-4">
@@ -80,23 +80,13 @@ var albumsRecherche = new Map([...series].filter(([cle, valeur]) => valeur.nom.i
 
 /* afficherliste(albumsRecherche) */
 series.forEach(value => {
-
   $('.filtreSeries').append(
-    `
-    <option>
-      ${value.nom}
-    </option>
-    `
+    `<option class="choixSeries">${value.nom}</option>`
   )
 })
 
 auteurs.forEach(value => {
-
   $('.filtreAuteurs').append(
-    `
-    <option>
-      ${value.nom}
-    </option>
-    `
+    `<option class="choixAuteurs">${value.nom}</option>`
   )
 })
