@@ -20,7 +20,7 @@ function afficherliste(albums) {
     var src = "albums/" + nomFic + ".jpg";
     data += 
     ` 
-    <div class="col-sm-6 col-lg-4 col-xl-3 mb-4">
+    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3 mb-4">
       <div class=" shadow card h-100 ">
         <img class="card-img-top border-bottom border-primary" src="${src}" width="auto" height="500px"  alt="${album.titre}">
         <div class="card-body">
