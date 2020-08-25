@@ -60,7 +60,7 @@
           <button class="btn btn-primary dropdown-toggle" type="button" id="panier" data-toggle="dropdown">
             <i class="fas fa-shopping-cart"></i> Panier <span class="badge"> 0 </span>
           </button>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="panier">
+          <div class="dropdown-menu dropdown-menu-right p-2 mt-2" aria-labelledby="panier">
               <div class="d-flex justify-content-between">
                 <div class="">
                   <i class="fas fa-shopping-cart"></i>
@@ -125,7 +125,7 @@
     <!-- CONTENU -->
     <div class="wrapper">
       <!-- PARTIE GAUCHE CONTENU -->
-      <div class="col-lg-3 col-md-3 col-sm-4 col-xl-2 p-4 text-white bg-dark d-none d-md-block">
+      <div class="col-sm-4 col-md-3 col-xl-2 p-4 text-white bg-dark d-none d-md-block">
         <div class=" mb-5 d-flex justify-content-center">
           <h1>Filtre</h1>
         </div>
@@ -174,26 +174,8 @@
         </div>
       </div>
       <!-- PARTIE DROITE CONTENU -->
-      <div class="modal fade" id="AjoutPanier" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="bg-light">
+      <div class="bg-light w-100">
+        <!-- TRIER LES BD -->
         <nav class="navbar navbar-expand-lg navbar-light ">
           <select class="form-control ml-auto tri ">
             <option value="0" disabled selected>Trier</option>
@@ -205,9 +187,10 @@
           </select>
         </nav>
         <div class="container-fluid">
-          <!-- 1ère row: 12 col -->
+          <!-- LISTE DE BD -->
           <div class="row" id="listeBD">
           </div>
+          <!-- PAGINATION -->
           <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center justify-content-md-end">
               <li class="page-item disabled">

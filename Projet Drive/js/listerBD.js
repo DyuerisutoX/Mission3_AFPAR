@@ -74,6 +74,6 @@ var albumsTriDecroissant = new Map([...albums].sort(([cle, valeur], [cle2, valeu
 afficherliste(albumsTriDecroissant) */
 
 // recherche
-var recherche = "Marsupilami"
+var recherche = "Le sens de la vie"
 var albumsRecherche = new Map([...albums].filter(([cle, valeur]) => valeur.titre.includes(recherche)))
-/* console.log(albumsRecherche); */
+/* afficherliste(albumsRecherche) */

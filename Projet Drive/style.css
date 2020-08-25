@@ -31,8 +31,7 @@
 
 /* Panier */
 .dropdown-menu {
-    margin-top:1em ;
-    padding: 1em;
+    width: 300px;
 
 }
 .dropdown-menu::after {
@@ -50,9 +49,6 @@
 }
 .dropdown-menu input {
     width: 50px;
-}
-.badge {
-    background-color: #007bff;
 }
 
 .divider-small {
@@ -74,6 +70,6 @@
 .navbar-brand {
     font-family: 'anime';
 }
-.ajout {
-    vertical-align: bottom;
+.table td {
+    vertical-align: middle;
 }
