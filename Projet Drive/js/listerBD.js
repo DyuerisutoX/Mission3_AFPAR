@@ -41,6 +41,7 @@ function afficherliste(albums) {
     elApp.html(data)
     $("#resellerEarnings").html(prixMin + " €")
     $("#clientPrice").html(prixMax + " €")
+
   } else {
     elApp.html("Aucune BD trouvée")
   }
@@ -75,5 +76,27 @@ afficherliste(albumsTriDecroissant) */
 
 // recherche
 var recherche = "Le sens de la vie"
-var albumsRecherche = new Map([...albums].filter(([cle, valeur]) => valeur.titre.includes(recherche)))
+var albumsRecherche = new Map([...series].filter(([cle, valeur]) => valeur.nom.includes(recherche)))
+
 /* afficherliste(albumsRecherche) */
+series.forEach(value => {
+
+  $('.filtreSeries').append(
+    `
+    <option>
+      ${value.nom}
+    </option>
+    `
+  )
+})
+
+auteurs.forEach(value => {
+
+  $('.filtreAuteurs').append(
+    `
+    <option>
+      ${value.nom}
+    </option>
+    `
+  )
+})
