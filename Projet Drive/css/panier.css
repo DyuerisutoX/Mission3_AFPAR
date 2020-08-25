@@ -144,7 +144,7 @@
     vertical-align: middle;
 }
 .cart-totals table tr td:last-child {
-	text-align: right;
+	text-align: center;
 }
 .cart-totals table tr td.subtotal {
 	font-size: 20px;
@@ -169,6 +169,11 @@
 }
 .btn-cart-totals .round-black-btn {
 	margin: 10px 0; 
+}
+
+.h2, h2 {
+    font-size: 2rem;
+    text-align: center;
 }
 
 .fa.fa-trash{

@@ -37,9 +37,6 @@
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- PARTIE GAUCHE NAVBAR -->
             <!-- BARRE DE RECHERCHE -->
-            <form class='navbar-form'>
-               <input class="form-control" type="search" placeholder="Recherche" aria-label="Search">
-            </form>
             <ul class="navbar-nav mr-auto">
                <li class="nav-item">
                   <a class="nav-link" href="#">Nouveautés</a>
@@ -138,8 +135,8 @@
                                        Blacksad - Quelque part entre les ombres
                                        <br>T01
                                     </div>
-                                    <div class="price">
-                                       12,50€
+                                    <div class="price" id="priceBD1">
+                                       <span id="priceUniBD1">12.50</span>€
                                     </div>
                                  </div>
                               </td>
@@ -151,8 +148,8 @@
                                  </form>
                               </td>
                               <td>
-                                 <div class="total" id="testPrixBD">
-                                    <span>12,50</span>€
+                                 <div class="total">
+                                    <span id="totalBD1"></span>
                                  </div>
                               </td>
                               <td>
@@ -160,7 +157,7 @@
                               </td>
                            </tr>
 
-                           <tr id="BD2">
+                           <tr>
                               <td>
                                  <div class="display-flex align-center">
                                     <div class="img-product">
@@ -170,8 +167,8 @@
                                        Cristal - Venu dailleurs
                                        <br>T01
                                     </div>
-                                    <div class="price">
-                                       10,50€
+                                    <div class="price" id="priceBD2">
+                                       <span id="priceUniBD2">10.50</span>€
                                     </div>
                                  </div>
                               </td>
@@ -184,13 +181,14 @@
                               </td>
                               <td>
                                  <div class="total">
-                                    <span>10,50</span>€
+                                    <span id="totalBD2"></span>
                                  </div>
                               </td>
                               <td>
                                   <button type="button" class="btn btn-outline-danger"><span aria-hidden="true">X</span></button>
                               </td>
                            </tr>
+
                            <tr> 
                               <td>
                                  <div class="display-flex align-center">
@@ -201,8 +199,8 @@
                                        Elfes - Le crystal des Elfes bleus
                                        <br>T01
                                     </div>
-                                    <div class="price">
-                                       09,50€
+                                    <div class="price" id="priceBD3">
+                                       <span id="priceUniBD3">09.50</span>€
                                     </div>
                                  </div>
                               </td>
@@ -215,13 +213,14 @@
                               </td>
                               <td>
                                  <div class="total">
-                                    <span>09,50</span>€
+                                    <span id="totalBD3"></span>
                                  </div>
                               </td>
                               <td>
                                   <button type="button" class="btn btn-outline-danger"><span aria-hidden="true">X</span></button>
                               </td>
                            </tr>
+
                            <tr> 
                               <td>
                                  <div class="display-flex align-center">
@@ -232,8 +231,8 @@
                                        Gaston - Gaffes à gogo
                                        <br>T02
                                     </div>
-                                    <div class="price">
-                                       10,00€
+                                    <div class="price" id="priceBD4">
+                                       <span id='priceUniBD4'>10.00</span>€
                                     </div>
                                  </div>
                               </td>
@@ -246,13 +245,14 @@
                               </td>
                               <td>
                                  <div class="total">
-                                    <span>10,00</span>€
+                                    <span id="totalBD4"></span>
                                  </div>
                               </td>
                               <td>
                                   <button type="button" class="btn btn-outline-danger"><span aria-hidden="true">X</span></button>
                               </td>
                            </tr>
+
                         </tbody>
                      </table>
                   </div>
@@ -261,23 +261,17 @@
                <!-- /.col-lg-8 -->
                <div class="col-lg-3">
                   <div class="cart-totals">
-                     <h3>Cart Totals</h3>
+                     <h2>Total</h2>
                      <form action="#" method="get" accept-charset="utf-8">
                         <table>
-                           <tbody>
-                              <tr>
-                                 <td>Subtotal</td>
-                                 <td class="subtotal"></td>
-                              </tr>
                               <tr class="total-row">
-                                 <td>Total</td>
-                                 <td class="price-total">22,50€</td>
+                                 <td class="price-total" id='recapitulatif'><span id='totalAchat'></span></td>
                               </tr>
-                           </tbody>
                         </table>
                         <hr>
                         <div class="btn-cart-totals">
-                           <a href="#" class="checkout round-black-btn" title="Validation">Valider</a>
+                           <a href="#" class="checkout round-black-btn" title="Validation" id="actionValidation">Valider</a>
+                           <div id="message"></div>
                         </div>
                         <!-- /.btn-cart-totals -->
                      </form>
