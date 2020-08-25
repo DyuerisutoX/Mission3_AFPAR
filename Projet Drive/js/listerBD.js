@@ -21,7 +21,7 @@ function afficherliste(albums) {
     data += 
     ` 
     <div class="col-sm-6 col-lg-4 col-xl-3 mb-4">
-      <div class="card border border-dark h-100 ">
+      <div class=" shadow card h-100 ">
         <img class="card-img-top border-bottom border-primary" src="${src}" width="auto" height="500px"  alt="${album.titre}">
         <div class="card-body">
           <h4 class="card-title">${album.titre}</h4>
@@ -30,7 +30,7 @@ function afficherliste(albums) {
             Numero : ${album.numero} <hr>
             Auteur : ${auteur.nom} <hr>
           </p>
-            <p class="prix">${album.prix} €</p>
+            <h4 class="prix">${album.prix} €</h4>
           <button type="button" class="btn btn-primary ajout"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
         </div>
       </div>
@@ -70,12 +70,13 @@ var albumsTriDecroissant = new Map([...albums].sort(([cle, valeur], [cle2, valeu
   }
   return 0; 
 }));
-/* console.log(albumsTriDecroissant) */
+/* console.log(albumsTriDecroissant)
+afficherliste(albumsTriDecroissant) */
 
 // recherche
 var recherche = "Marsupilami"
 var albumsRecherche = new Map([...albums].filter(([cle, valeur]) => valeur.titre.includes(recherche)))
-console.log(albumsRecherche)
+/* console.log(albumsRecherche); */
 /* function prbImg(element) {
   // console.log(element);
   if (element.id === "albumMini")
