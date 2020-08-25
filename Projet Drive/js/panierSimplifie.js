@@ -8,6 +8,7 @@ $(document).ready(function () {
             var prix = $(this).parent().children('.prix').html();
             prix = prix.replace(/€| /g, "");
             prix = parseFloat(prix);
+            prix = prix.toFixed(2)
             var src = $(this).parent().parent().children('.card-img-top').attr('src');
 
             if ($('.badge').html() == 0) {
@@ -23,7 +24,7 @@ $(document).ready(function () {
                         $(this).parent().parent().children("td:nth-child(2)").children().attr('value',value + 1);
                         doublon = true;
                         updateNbItemPanier();
-                        $(this).parent().parent().children(".prixItem").html((value + 1) * prix + "€");
+                        $(this).parent().parent().children(".prixItem").html(((value + 1) * prix).toFixed(2) + "€");
                         updateTotal()
                     } 
                 })
@@ -31,7 +32,6 @@ $(document).ready(function () {
                     ajoutPanier(src,prix)
                     updateNbItemPanier()
                     updateTotal()
-
                 }
             }
         })
@@ -49,6 +49,7 @@ $(document).ready(function () {
             prix = prix.replace(/€| /g, "");
             prix = parseFloat(prix);
             total +=prix
+            total = total.toFixed(2)
         })
         $('.total').html("Total : " + total + " €")
 

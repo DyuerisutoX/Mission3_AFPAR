@@ -24,14 +24,14 @@ function afficherliste(albums) {
       <div class=" shadow card h-100 ">
         <img class="card-img-top border-bottom border-primary" src="${src}" width="auto" height="500px"  alt="${album.titre}">
         <div class="card-body">
-          <h4 class="card-title">${album.titre}</h4>
-          <p class="card-text" id="serie">
-            Serie : ${serie.nom} <hr>
-            Numero : ${album.numero} <hr>
-            Auteur : ${auteur.nom} <hr>
-          </p>
+            <h4 class="card-title">${album.titre}</h4>
+            <p class="card-text" id="serie">
+              Serie : ${serie.nom} <hr>
+              Numero : ${album.numero} <hr>
+              Auteur : ${auteur.nom} <hr>
+            </p>
             <h4 class="prix">${album.prix} €</h4>
-          <button type="button" class="btn btn-primary ajout"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
+            <button type="button" class="btn btn-primary ajout"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
         </div>
       </div>
     </div>
