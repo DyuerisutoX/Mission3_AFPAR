@@ -54,10 +54,9 @@ document.getElementById("btnNextPage").addEventListener("click", function () {
   }
 })
 function showPageInfo(){
-    document.getElementById('pageInfo').innerHTML = `
-      Page ${actualPage} / ${maxPages}
-    `
-  }
+  document.getElementById('pageInfo').innerHTML = 
+  `Page ${actualPage} / ${maxPages}`
+}
 
 /* document.querySelectorAll("input[type=search]")[0].addEventListener("input", function() {
   var choix = tableClient.filter(client =>

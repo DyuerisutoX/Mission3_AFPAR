@@ -18,7 +18,7 @@ var albumsTriDecroissant = new Map([...albums].sort(([cle, valeur], [cle2, valeu
     if (parseFloat(valeur.prix) > parseFloat(valeur2.prix)) {
         return -1;
     }
-    return 0; 
+    return 0;
 }));
 /* console.log(albumsTriDecroissant)
 afficherliste(albumsTriDecroissant) */
