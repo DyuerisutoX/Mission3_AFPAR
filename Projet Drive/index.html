@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
+
     <!-- CSS  BOOTSTRAP-->
     <link rel="stylesheet" href="./assets/bootstrap.min.css">
 
@@ -13,7 +14,6 @@
 
     <!-- JS FONT AWESOME -->
     <script src="./assets/efcb5b7b29.js"></script>
-    <!-- JS JQUERY -->
 
     <!-- JS BOOTSTRAP-->
     <script src="./assets/jquery-3.5.1.slim.min.js"></script> 
@@ -74,7 +74,7 @@
                       <th class="rounded-left border-0">Article</th>
                       <th class="border-0">Quantité</th>
                       <th class="border-0 ">Prix</th>
-                      <th><i class="rounded-right border-0 fa fa-trash" aria-hidden="true"></i></th>
+                      <th class="rounded-right border-0"><!-- <i class=" fa fa-trash"></i> --></th>
                     </tr>
                   </thead>
                   <tbody class="panier">
@@ -168,11 +168,9 @@
         <nav class="navbar navbar-expand-lg navbar-light ">
           <select class="form-control ml-auto tri ">
             <option value="0" disabled selected>Trier</option>
-            <option value="1" >Par auteurs</option>
-            <option value="2" >Par Serie</option>
-            <option value="3" >Par désignation</option>
-            <option value="4" >Du - cher au + cher</option>
-            <option value="5" >Du + cher au - cher</option>
+            <option class="tri" value="0" >Par désignation</option>
+            <option class="tri" value="1">Du - cher au + cher</option>
+            <option class="tri" value="2" >Du + cher au - cher</option>
           </select>
         </nav>
         <div class="container-fluid">
@@ -241,16 +239,19 @@
       </div>
     </footer>
   </body>
+
+  <!-- JQuery -->
   <script src="./assets/jquery.js"></script>
-  <script src="./js/meteoAPI.js"></script>
+
+  <!-- Données -->
+
   <script src="./data/albums.js"></script>
   <script src="./data/auteurs.js"></script>
   <script src="./data/series.js"></script>
-  <!-- <script src="./js/panierSimplifie.js"></script> -->
-  <script src="./js/listerBD.js"></script>
 
-  <script src="./js/filtre.js"></script>
+  <!-- Interaction -->
+  <script src="./js/meteoAPI.js"></script>
+  <script src="./js/main.js"></script>
   <script src="./js/panierSimplifie.js"></script>
-  <!-- <script src="./js/recherche.js"></script> -->
 
 </html>

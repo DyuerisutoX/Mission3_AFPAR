@@ -57,7 +57,7 @@ $(document).ready(function () {
             prix = prix.replace(/€| /g, "");
             prix = parseFloat(prix);
             total +=prix
-            /* total = total.toFixed(2) */
+            total = parseFloat(total).toFixed(2)
         })
         $('.total').html("Total : " + total + " €")
 

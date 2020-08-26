@@ -2,7 +2,7 @@
 
 
 $(document).ready(function () {
-  /* LISTER LES BD / LISTER LES BD PAR PAGES/LOT */
+  /* LISTER LES BD PAR PAGES / LOT -----------------------------------------------------------------*/
   function lister (albums) {
     var tableDonnees = new Array;
   
@@ -95,14 +95,16 @@ $(document).ready(function () {
       $('.pageInfo').html(`${actualPage} / ${maxPages}`)
     }
   }
+
   lister(albums)
-  /* VOIR LE CONTENU SIMPLIFIE DU PANIER A TOUT MOMENT / AJOUTER/SUPPRIMER BD DANS PANIER*/
+  /* AJOUTER / SUPPRIMER BD DANS PANIER ------------------------------------------------------------*/
   var nbItemPanier = 0
   function  activerAjoutPanier() { 
     $('.ajout').each(function() {
       $(this).on('click', ajouterAuPanier)
     })
     $('.table tbody').on('click', '.btn-outline-danger', function () {
+      console.log($(this).closest('input').val())
       decreaseNbItemPanier();
       $(this).closest('tr').remove();
       updateTotal()
@@ -181,121 +183,82 @@ $(document).ready(function () {
       }
   }
 
-  /* FILTRER LES BD PAR AUTEURS / FILTRER LES BD PAR SERIE */
+  /* FILTRER LES BD PAR AUTEURS ---------------------------------------------------------------------*/
+  auteurs.forEach(value => {
+    $('.filtreAuteurs').append(
+      `<option class="choixAuteurs">${value.nom}</option>`
+  )})
+  $('.choixAuteurs').each(function () {
+    $(this).on('click',function() {
+      var albumfiltreAuteurs = new Map([...albums].filter(([cle, valeur]) => auteurs.get(valeur.idAuteur).nom == $(this).html()));
+      lister(albumfiltreAuteurs)
+    } )
+  })
+
+  /* FILTRER LES BD PAR SERIES -----------------------------------------------------------------------*/
   series.forEach(value => {
     $('.filtreSeries').append(
       `<option class="choixSeries">${value.nom}</option>`
     )
   })
-  
-  auteurs.forEach(value => {
-    $('.filtreAuteurs').append(
-      `<option class="choixAuteurs">${value.nom}</option>`
-  )})
-  
-  $('.choixAuteurs').each(function () {
-    $(this).on('click', afficherFiltreAuteurs )
-  })
   $('.choixSeries').each(function () {
-    $(this).on('click', afficherFiltreSeries )
+    $(this).on('click', function () {
+      var albumfiltreSeries = new Map([...albums].filter(([cle, valeur]) => series.get(valeur.idSerie).nom == $(this).html()));
+      lister(albumfiltreSeries)
+    } )
+
   })
-  function afficherFiltreAuteurs () {
-      const elApp = $("#listeBD");
-      elApp.html("")
-      let data = ""
-      for (var [idAlbum, album] of albums.entries()) {
-          if (auteurs.get(album.idAuteur).nom == $(this).html()) {
-              var nomFic = series.get(album.idSerie).nom + "-" + album.numero + "-" + album.titre;
-              nomFic = nomFic.replace(/'|!|\?|\.|"|:|\$/g, "");
-              var src = "albums/" + nomFic + ".jpg";
-              data += ` 
-              <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3 mb-4 filtre">
-                  <div class=" shadow card h-100 ">
-                  <img class="card-img-top border-bottom border-primary" src="${src}" width="auto" height="500px"  alt="${album.titre}">
-                  <div class="card-body">
-                      <h4 class="card-title">${album.titre}</h4>
-                      <p class="card-text" id="serie">
-                          Serie : ${series.get(album.idSerie).nom} <hr>
-                          Numero : ${album.numero} <hr>
-                          Auteur : ${auteurs.get(album.idAuteur).nom} <hr>
-                      </p>
-                      <h4 class="prix">${album.prix} €</h4>
-                      <button type="button" class="btn btn-primary ajout"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
-                  </div>
-                  </div>
-              </div>
-              `
-          }
-      }  
-      if (data.length > 0) {
-          elApp.html(data)
-          activerAjoutPanier()
-      } else {
-          elApp.html("Aucune BD trouvée")
-      }
-  }
-  function afficherFiltreSeries () {
-    const elApp = $("#listeBD");
-    elApp.html("")
-    let data = ""
-    for (var [idAlbum, album] of albums.entries()) {
-        var serie = series.get(album.idSerie);
-        if (serie.nom == $(this).html()) {
-            var nomFic = series.get(album.idSerie).nom + "-" + album.numero + "-" + album.titre;
-            nomFic = nomFic.replace(/'|!|\?|\.|"|:|\$/g, "");
-            var src = "albums/" + nomFic + ".jpg";
-            data += ` 
-            <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3 mb-4 filtre">
-                <div class=" shadow card h-100 ">
-                <img class="card-img-top border-bottom border-primary" src="${src}" width="auto" height="500px"  alt="${album.titre}">
-                <div class="card-body">
-                    <h4 class="card-title">${album.titre}</h4>
-                    <p class="card-text" id="serie">
-                        Serie : ${serie.nom} <hr>
-                        Numero : ${album.numero} <hr>
-                        Auteur : ${auteurs.get(album.idAuteur).nom} <hr>
-                    </p>
-                    <h4 class="prix">${album.prix} €</h4>
-                    <button type="button" class="btn btn-primary ajout"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
-                </div>
-                </div>
-            </div>
-            `
-        }
-    }  
-    if (data.length > 0) {
-        elApp.html(data)
-        activerAjoutPanier()
-    } else {
-        elApp.html("Aucune BD trouvée")
-    }
-  }
-  /* RECHERCHER UNE BD */
+
+  /* RECHERCHER UNE BD --------------------------------------------------------------------------------*/
   $('.navbar-form').submit(function (e) { 
     e.preventDefault();
     var recherche = $('#rechercheNav').val()                                            //Récupère valeur de la barre de recherche
     var albumsRecherche = new Map([...albums].filter(([cle, valeur]) => valeur.titre.toLowerCase().includes(recherche.toLowerCase())));
     lister(albumsRecherche)
   });
-  /* TRIER LES BD */
 
-
-/*   $('.navbar-form').keyup(function (event) {
-    let keycode = (event.keyCode ? event.keyCode : event.wchich);
-    // recherche
-    var recherche = document.getElementById('rechercheNav').value;                                              //Récupère valeur de la barre de recherche
-    var albumsRecherche = new Map([...albums].filter(([cle, valeur]) => valeur.titre.toLowerCase().includes(recherche.toLowerCase())));     
-    var lecture = "Marsupilami";
-    if(keycode == '13'){
-
-        //console.log(albumsRecherche); 
-        lister(albumsRecherche)
-    }
-    else
-    {
-        event.preventDefault();
-        //console.log('Test KO');
-    }
-  }); */
-
+  /* TRIER LES BD -------------------------------------------------------------------------------------*/
+  $('.tri').each(function() {
+    $(this).on('click', function () {
+      var albumsTri;
+      switch ($(this).val()) {
+        case "0":
+          albumsTri = new Map([...albums].sort(([cle, valeur], [cle2, valeur2])=> {
+            if (valeur.titre > valeur2.titre) {
+              return 1;
+            }
+            if (valeur.titre < valeur2.titre) {
+              return -1;
+            }
+            return 0; 
+          }))
+          lister(albumsTri)
+          break;
+        case "1":
+          albumsTri =  new Map([...albums].sort(([cle, valeur], [cle2, valeur2])=> {
+            if (parseFloat(valeur.prix) > parseFloat(valeur2.prix)) {
+                return 1;
+            }
+            if (parseFloat(valeur.prix) < parseFloat(valeur2.prix)) {
+                return -1;
+            }
+            return 0; 
+          }));
+          lister(albumsTri)
+          break;
+        case "2":
+          albumsTri = new Map([...albums].sort(([cle, valeur], [cle2, valeur2])=> {
+            if (parseFloat(valeur.prix) < parseFloat(valeur2.prix)) {
+                return 1;
+            }
+            if (parseFloat(valeur.prix) > parseFloat(valeur2.prix)) {
+                return -1;
+            }
+            return 0;
+          }));
+          lister(albumsTri)
+          break;
+      }
+    })
+  })
 })
