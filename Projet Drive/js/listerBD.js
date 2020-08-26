@@ -1,19 +1,9 @@
 
-series.forEach(value => {
-  $('.filtreSeries').append(
-    `<option class="choixSeries">${value.nom}</option>`
-  )
-})
-
-auteurs.forEach(value => {
-  $('.filtreAuteurs').append(
-    `<option class="choixAuteurs">${value.nom}</option>`
-)})
 
 
 $(document).ready(function () {
   /* LISTER LES BD / LISTER LES BD PAR PAGES/LOT */
-  function lister(albums) {
+  function lister (albums) {
     var tableDonnees = new Array;
   
     for (const [cle, valeur] of albums) {
@@ -108,12 +98,26 @@ $(document).ready(function () {
     $('.ajout').each(function() {
       $(this).on('click', ajouterAuPanier)
     })
+    $('.table tbody').on('click', '.btn-outline-danger', function () {
+      decreaseNbItemPanier();
+      $(this).closest('tr').remove();
+      updateTotal()
+
+  });
   }
   function updateNbItemPanier() {
       nbItemPanier++;
       $('.badge').each(function() {
           $(this).html(nbItemPanier)
       })
+  }
+  function decreaseNbItemPanier () {
+    var nbItem = parseInt($(this).parent().parent().children("td:nth-child(2)").children().attr('value'))
+    console.log(nbItem);
+    nbItemPanier -= nbItem
+    $('.badge').each(function() {
+        $(this).html(nbItemPanier)
+    })
   }
   function updateTotal () {
       var total = 0
@@ -128,18 +132,19 @@ $(document).ready(function () {
 
 
   }
-  function ajoutPanier(src, prix) {
+  function ajoutPanier (src, prix) {
       $('.panier').append(
           `
           <tr>
               <td><img src="${src}"class="imgBD" width="50px" height="auto" alt=""></td>
               <td class="nbItem"><input type="number" disabled value="1"></td>
               <td class="prixItem">${prix} €</td>
+              <td><button type="button" class="btn btn-outline-danger"><span aria-hidden="true">X</span></button></td>
           </tr>
           `
       ) 
   }
-  function ajouterAuPanier() {
+  function ajouterAuPanier () {
       // recuperation des informations
       var prix = $(this).parent().children('.prix').html();
       prix = prix.replace(/€| /g, "");
@@ -173,13 +178,24 @@ $(document).ready(function () {
   }
 
   /* FILTRER LES BD PAR AUTEURS / FILTRER LES BD PAR SERIE */
+  series.forEach(value => {
+    $('.filtreSeries').append(
+      `<option class="choixSeries">${value.nom}</option>`
+    )
+  })
+  
+  auteurs.forEach(value => {
+    $('.filtreAuteurs').append(
+      `<option class="choixAuteurs">${value.nom}</option>`
+  )})
+  
   $('.choixAuteurs').each(function () {
     $(this).on('click', afficherFiltreAuteurs )
   })
   $('.choixSeries').each(function () {
     $(this).on('click', afficherFiltreSeries )
   })
-  function afficherFiltreAuteurs() {
+  function afficherFiltreAuteurs () {
       const elApp = $("#listeBD");
       elApp.html("")
       let data = ""
@@ -214,7 +230,7 @@ $(document).ready(function () {
           elApp.html("Aucune BD trouvée")
       }
   }
-  function afficherFiltreSeries() {
+  function afficherFiltreSeries () {
     const elApp = $("#listeBD");
     elApp.html("")
     let data = ""
@@ -250,34 +266,29 @@ $(document).ready(function () {
         elApp.html("Aucune BD trouvée")
     }
   }
-
-  $('.navbar-form').keyup(function (event) {
+  /* RECHERCHER UNE BD */
+  $('.navbar-form').submit(function (e) { 
+    e.preventDefault();
+    var recherche = $('#rechercheNav').val()                                            //Récupère valeur de la barre de recherche
+    var albumsRecherche = new Map([...albums].filter(([cle, valeur]) => valeur.titre.toLowerCase().includes(recherche.toLowerCase())));
+    lister(albumsRecherche)
+  });
+/*   $('.navbar-form').keyup(function (event) {
     let keycode = (event.keyCode ? event.keyCode : event.wchich);
     // recherche
     var recherche = document.getElementById('rechercheNav').value;                                              //Récupère valeur de la barre de recherche
-    var albumsRecherche = new Map([...albums].filter(([cle, valeur]) => valeur.titre.includes(recherche)));     
+    var albumsRecherche = new Map([...albums].filter(([cle, valeur]) => valeur.titre.toLowerCase().includes(recherche.toLowerCase())));     
     var lecture = "Marsupilami";
-
-    
-    // function prbImg(element) {
-    //   // console.log(element);
-    //   if (element.id === "albumMini")
-    //     element.src = albumDefaultMini;
-    //   else element.src = albumDefault;
-    // }
-
     if(keycode == '13'){
 
         //console.log(albumsRecherche); 
         lister(albumsRecherche)
-        
-        
     }
     else
     {
         event.preventDefault();
         //console.log('Test KO');
     }
-});
+  }); */
 
 })

@@ -80,6 +80,7 @@ $(document).ready(function () {
         $('.table tbody').on('click', '.btn-outline-danger', function () {
             $(this).closest('tr').remove();
             decreaseNbItemPanier();
+            updateTotal()
     
         });
     
