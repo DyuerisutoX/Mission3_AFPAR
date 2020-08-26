@@ -43,6 +43,14 @@ $(document).ready(function () {
             $(this).html(nbItemPanier)
         })
     }
+
+    function decreaseNbItemPanier(){
+        nbItemPanier--;
+        $('.badge').each(function() {
+            $(this).html(nbItemPanier)
+        })
+    }
+
     function updateTotal () {
         var total = 0
         $('.prixItem').each(function() {
@@ -63,8 +71,17 @@ $(document).ready(function () {
                 <td><img src="${src}"class="imgBD" width="50px" height="auto" alt=""></td>
                 <td class="nbItem"><input type="number" disabled value="1"></td>
                 <td class="prixItem">${prix} €</td>
+                <td><button type="button" class="btn btn-outline-danger"><span aria-hidden="true">X</span></button></td>
             </tr>
             `
         ) 
     }
+
+        //Suprime le produit de la liste
+        $('.table tbody').on('click', '.btn-outline-danger', function () {
+            $(this).closest('tr').remove();
+            decreaseNbItemPanier();
+    
+        });
+    
 })
