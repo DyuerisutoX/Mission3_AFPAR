@@ -22,7 +22,7 @@ $(document).ready(function () {
         if(i < tableDonnees.length){
           data +=
           ` 
-          <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3 mb-4">
+          <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3 mb-4">
             <div class=" shadow card h-100 ">
               <img class="card-img-top border-bottom border-primary" src="${tableDonnees[i].src}" width="auto" height="500px"  alt="${tableDonnees[i].titre}">
               <div class="card-body">

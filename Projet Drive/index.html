@@ -124,69 +124,69 @@
       </a>
     </div>
     <!-- CONTENU -->
-    <div class="wrapper">
-      <!-- PARTIE GAUCHE CONTENU -->
-      <div class="col-sm-5 col-md-4 col-xl-2 p-4 text-white bg-dark d-none d-md-block">
-        <div class=" mb-2 d-flex justify-content-center">
-          <h1>Filtre</h1>
-        </div>
-        <div class="mb-5">
-          <h5 class="font-weight-bold mb-3">Par auteur</h5>
-          <div class="divider-small mb-3"></div>
-          <form>
-            <select size="10" class="form-control filtreAuteurs">
-            </select>
-          </form>
-        </div>
-        <div class="mb-5">
-          <h5 class="font-weight-bold mb-3">Par serie</h5>
-          <div class="divider-small mb-3"></div>
-          <form class="serie">
-            <select size="10" class="form-control filtreSeries">
-            </select>
-          </form>
-        </div>
-        <div class="mb-5">
-          <h5 class="font-weight-bold mb-3">Par prix</h5>
-          <div class="divider-small mb-3"></div>
-          <form class="range-field">
-            <input type="range" min="0" max="319" />
-          </form>
-          <div class="row justify-content-center">
-            <div class="col-md-6 text-left">
-              <p class="dark-grey-text"><strong id="resellerEarnings"></strong></p>
-            </div>
-            <div class="col-md-6 text-right">
-              <p class="dark-grey-text"><strong id="clientPrice"></strong></p>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 col-md-4 col-xl-2 p-4 text-white bg-dark">
+          <div class=" mb-2 d-flex justify-content-center">
+            <h1>Filtre</h1>
+          </div>
+          <div class="mb-5">
+            <h5 class="font-weight-bold mb-3">Par auteur</h5>
+            <div class="divider-small mb-3"></div>
+            <form>
+              <select size="10" class="form-control filtreAuteurs">
+              </select>
+            </form>
+          </div>
+          <div class="mb-5">
+            <h5 class="font-weight-bold mb-3">Par serie</h5>
+            <div class="divider-small mb-3"></div>
+            <form class="serie">
+              <select size="10" class="form-control filtreSeries">
+              </select>
+            </form>
+          </div>
+          <div class="mb-5">
+            <h5 class="font-weight-bold mb-3">Par prix</h5>
+            <div class="divider-small mb-3"></div>
+            <form class="range-field">
+              <input type="range" min="0" max="319" />
+            </form>
+            <div class="row justify-content-center">
+              <div class="col-md-6 text-left">
+                <p class="dark-grey-text"><strong id="resellerEarnings"></strong></p>
+              </div>
+              <div class="col-md-6 text-right">
+                <p class="dark-grey-text"><strong id="clientPrice"></strong></p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- PARTIE DROITE CONTENU -->
-      <div class="bg-light w-100">
-        <!-- TRIER LES BD -->
-        <nav class="navbar navbar-expand-lg navbar-light ">
-          <select class="form-control ml-auto tri ">
-            <option value="0" disabled selected>Trier</option>
-            <option class="tri" value="0" >Par désignation</option>
-            <option class="tri" value="1">Du - cher au + cher</option>
-            <option class="tri" value="2" >Du + cher au - cher</option>
-          </select>
-        </nav>
-        <div class="container-fluid">
-          <!-- LISTE DE BD -->
-          <div class="row" id="listeBD">
-          </div>
-          <!-- PAGINATION -->
-          <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center justify-content-md-end">
-              <li class="page-item"><a class="page-link btnFirstPage" href="#"><i class="fas fa-angle-double-left"></i></a></li>
-              <li class="page-item"><a class="page-link btnPrevious" href="#"><i class="fas fa-angle-left"></i></a></li>
-              <li class="page-item active"><a class="page-link pageInfo" href="#">1</a></li>
-              <li class="page-item"><a class="page-link btnNextPage" href="#"><i class="fas fa-angle-right"></i></a></li>
-              <li class="page-item"><a class="page-link btnLastPage" href="#"><i class="fas fa-angle-double-right"></i></a></li>
-            </ul>
+        <div class=" col-sm-6 col-md-8 col-xl-10 bg-light w-100">
+          <!-- TRIER LES BD -->
+          <nav class="navbar navbar-expand-lg navbar-light ">
+            <select class="form-control ml-auto tri ">
+              <option value="0" disabled selected>Trier</option>
+              <option class="tri" value="0" >Par désignation</option>
+              <option class="tri" value="1">Du - cher au + cher</option>
+              <option class="tri" value="2" >Du + cher au - cher</option>
+            </select>
           </nav>
+          <div class="container-fluid">
+            <!-- LISTE DE BD -->
+            <div class="row" id="listeBD">
+            </div>
+            <!-- PAGINATION -->
+            <nav aria-label="Page navigation">
+              <ul class="pagination justify-content-center justify-content-md-end">
+                <li class="page-item"><a class="page-link btnFirstPage" href="#"><i class="fas fa-angle-double-left"></i></a></li>
+                <li class="page-item"><a class="page-link btnPrevious" href="#"><i class="fas fa-angle-left"></i></a></li>
+                <li class="page-item active"><a class="page-link pageInfo" href="#">1</a></li>
+                <li class="page-item"><a class="page-link btnNextPage" href="#"><i class="fas fa-angle-right"></i></a></li>
+                <li class="page-item"><a class="page-link btnLastPage" href="#"><i class="fas fa-angle-double-right"></i></a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     </div>
