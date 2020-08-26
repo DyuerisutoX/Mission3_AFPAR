@@ -56,6 +56,7 @@ $(document).ready(function () {
     
     showList(albums)
     activerAjoutPanier()
+
     /* Premiere page */
     $('.btnFirstPage').on('click',function(e) {
       e.preventDefault()
@@ -111,7 +112,7 @@ $(document).ready(function () {
       $(this).on('click', ajouterAuPanier)
     })
     $('.table tbody').on('click', '.btn-danger', function () {
-      var nbItem = $(this).parent().parent().children('td:nth-child(2)').children().val()
+      var nbItem = $(this).parent().parent().children('td:nth-child(2)').children().val() // Récupère la valeur de l'input
       nbItemPanier -= nbItem
       $('.badge').each(function() {
         $(this).html(nbItemPanier)
@@ -126,6 +127,7 @@ $(document).ready(function () {
       nbItemPanier++;
       $('.badge').each(function() {
           $(this).html(nbItemPanier)
+
       })
   }
   /* Met à jour le total du panier */
@@ -173,11 +175,12 @@ $(document).ready(function () {
           var doublon = false
           $('.imgBD').each(function() {
               if ($(this).attr('src') == src)  {
-                  var value = parseInt($(this).parent().parent().children("td:nth-child(2)").children().attr('value'));
-                  $(this).parent().parent().children("td:nth-child(2)").children().attr('value',value + 1);
+                  var value = parseInt($(this).parent().parent().children("td:nth-child(2)").children().attr('value')); //Récupère la valeur du input
+                  $(this).parent().parent().children("td:nth-child(2)").children().attr('value',value + 1); // modifie la valeur du input
+                  console.log("yes");
                   doublon = true;
-                  updateNbItemPanier();
-                  $(this).parent().parent().children(".prixItem").html(((value + 1) * prix).toFixed(2) + "€");
+                  updateNbItemPanier(); // met à jour le nombre d'item dans le panier
+                  $(this).parent().parent().children(".prixItem").html(((value + 1) * prix).toFixed(2) + "€"); // modifie le prix
                   updateTotal()
               } 
           })
@@ -223,7 +226,7 @@ $(document).ready(function () {
   /* Affiche la liste filtré */
   $('.navbar-form').submit(function (e) { 
     e.preventDefault();
-    var recherche = $('#rechercheNav').val()                                            //Récupère valeur de la barre de recherche
+    var recherche = $('#rechercheNav').val()  //Récupère valeur de la barre de recherche
     var albumsRecherche = new Map([...albums].filter(([cle, valeur]) => valeur.titre.toLowerCase().includes(recherche.toLowerCase())));
     lister(albumsRecherche)
   });
@@ -233,7 +236,7 @@ $(document).ready(function () {
   $('.tri').each(function() {
     $(this).on('click', function () {
       var albumsTri;
-      switch ($(this).val()) {
+      switch ($(this).val()) { // Récupère la valeur de l'option choisie
         case "0":
           albumsTri = new Map([...albums].sort(([cle, valeur], [cle2, valeur2])=> {
             if (valeur.titre > valeur2.titre) {

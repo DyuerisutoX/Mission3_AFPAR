@@ -27,7 +27,35 @@
       <!-- LOGO -->
       <a class="navbar-brand" href="index.html">
         <img src="./media/comicv2.png" alt="Logo" width="30"> BD Store
-      </a>
+      </a>        
+      <div class=" ml-auto dropdown d-block d-md-none">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="panier" data-toggle="dropdown">
+          <i class="fas fa-shopping-cart"></i><span class="badge"> 0 </span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right p-2 mt-2" aria-labelledby="panier">
+            <div class="d-flex justify-content-between">
+              <div class="">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="badge badge-primary">0</span></div>
+              <div class="total">Total : 0€</div>
+            </div>
+            <div class="panier-item">
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th class="rounded-left border-0">Article</th>
+                    <th class="border-0">Quantité</th>
+                    <th class="border-0 ">Prix</th>
+                    <th class="rounded-right border-0"><!-- <i class=" fa fa-trash"></i> --></th>
+                  </tr>
+                </thead>
+                <tbody class="panier">
+                </tbody>
+              </table>
+            </div>
+            <a class="btn btn-primary btn-block" href="panier.html" role="button">Voir panier</a>
+        </div>
+      </div>
       <!-- MENU BURGER -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
