@@ -18,8 +18,8 @@ $(document).ready(function () {
       const elApp = $("#listeBD");
       elApp.html("");
       let data = "";
-      for( let i = first; i < first + numberOfItems;i++){
-        if(i<tableDonnees.length){
+      for( let i = first ; i < first + numberOfItems ; i++){
+        if(i < tableDonnees.length){
           data +=
           ` 
           <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3 mb-4">
@@ -49,7 +49,7 @@ $(document).ready(function () {
     }
     const numberOfItems = 8
     var first = 0
-    var maxPages = 67;
+    var maxPages = Math.ceil(tableDonnees.length / numberOfItems);
     var actualPage = 1
     
     showList(albums)
@@ -61,6 +61,7 @@ $(document).ready(function () {
       actualPage = 1;
       showList();
       activerAjoutPanier()
+      window.scrollTo(0,0)
     })
     $('.btnPrevious').on('click',function(e) {
       e.preventDefault()
@@ -69,6 +70,7 @@ $(document).ready(function () {
         actualPage --;
         showList();
         activerAjoutPanier()
+        window.scrollTo(0,0)
       } 
     })
     $('.btnLastPage').on('click',function(e) {
@@ -77,6 +79,7 @@ $(document).ready(function () {
       actualPage = maxPages;
       showList();
       activerAjoutPanier() 
+      window.scrollTo(0,0)
     }) 
     $('.btnNextPage').on('click',function(e) {
       e.preventDefault()
@@ -85,6 +88,7 @@ $(document).ready(function () {
         actualPage ++;
         showList();
         activerAjoutPanier()
+        window.scrollTo(0,0)
       }
     })
     function showPageInfo(){
@@ -273,6 +277,9 @@ $(document).ready(function () {
     var albumsRecherche = new Map([...albums].filter(([cle, valeur]) => valeur.titre.toLowerCase().includes(recherche.toLowerCase())));
     lister(albumsRecherche)
   });
+  /* TRIER LES BD */
+
+
 /*   $('.navbar-form').keyup(function (event) {
     let keycode = (event.keyCode ? event.keyCode : event.wchich);
     // recherche
