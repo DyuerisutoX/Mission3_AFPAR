@@ -12,7 +12,6 @@ if (navigator.geolocation) {
         latitude = position.coords.latitude
         longitude = position.coords.longitude
     });
-
 } else {
     $("#meteo").html("Geolocalisation désactivé")   
 }

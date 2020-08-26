@@ -103,9 +103,12 @@ $(document).ready(function () {
     $('.ajout').each(function() {
       $(this).on('click', ajouterAuPanier)
     })
-    $('.table tbody').on('click', '.btn-outline-danger', function () {
-      console.log($(this).closest('input').val())
-      decreaseNbItemPanier();
+    $('.table tbody').on('click', '.btn-danger', function () {
+      var nbItem = $(this).parent().parent().children('td:nth-child(2)').children().val()
+      nbItemPanier -= nbItem
+      $('.badge').each(function() {
+        $(this).html(nbItemPanier)
+      })
       $(this).closest('tr').remove();
       updateTotal()
 
@@ -116,14 +119,6 @@ $(document).ready(function () {
       $('.badge').each(function() {
           $(this).html(nbItemPanier)
       })
-  }
-  function decreaseNbItemPanier () {
-    var nbItem = parseInt($(this).parent().parent().children("td:nth-child(2)").children().attr('value'))
-    console.log(nbItem);
-    nbItemPanier -= nbItem
-    $('.badge').each(function() {
-        $(this).html(nbItemPanier)
-    })
   }
   function updateTotal () {
       var total = 0
@@ -145,7 +140,7 @@ $(document).ready(function () {
               <td><img src="${src}"class="imgBD" width="50px" height="auto" alt=""></td>
               <td class="nbItem"><input type="number" disabled value="1"></td>
               <td class="prixItem">${prix} €</td>
-              <td><button type="button" class="btn btn-outline-danger"><span aria-hidden="true">X</span></button></td>
+              <td><button type="button" class="btn btn-danger"><i class="fas fa-times"></i></button></td>
           </tr>
           `
       ) 
