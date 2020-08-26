@@ -18,8 +18,9 @@ $(document).ready(function (){
             
                 if(keycode == '13'){
 
-                        //console.log(albumsRecherche); 
-                        console.log(albumsRecherche);
+                    //console.log(albumsRecherche); 
+                    console.log(albumsRecherche);
+                    
                     
                 }
                 else
