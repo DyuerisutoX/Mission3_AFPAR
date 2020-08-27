@@ -223,37 +223,37 @@ $(document).ready(function () {
   I : /
   */
   function ajouterAuPanier () {
-      // recuperation des informations
-      var prix = $(this).parent().children('.prix').html();
-      prix = prix.replace(/€| /g, "");
-      prix = parseFloat(prix);
-      prix = prix.toFixed(2)
-      var src = $(this).parent().parent().children('.card-img-top').attr('src');
+    // recuperation des informations
+    var prix = $(this).parent().children('.prix').html();
+    prix = prix.replace(/€| /g, "");
+    prix = parseFloat(prix);
+    prix = prix.toFixed(2)
+    var src = $(this).parent().parent().children('.card-img-top').attr('src');
 
-      if ($('.badge').html() == 0) {
-          ajoutLignePanier(src,prix);
-          updateNbItemPanier();
+    if ($('.badge').html() == 0) {
+      ajoutLignePanier(src,prix);
+      updateNbItemPanier();
+      updateTotal()
+    } else {
+      // Verification si la bd n'existe pas déja dans le panier
+      var doublon = false
+      $('.imgBD').each(function() {
+        if ($(this).attr('src') == src)  {
+          var value = parseInt($(this).parent().parent().children("td:nth-child(2)").children().attr('value')); //Récupère la valeur du input
+          $(this).parent().parent().children("td:nth-child(2)").children().attr('value',value + 1); // modifie la valeur du input
+          console.log("yes");
+          doublon = true;
+          updateNbItemPanier(); // met à jour le nombre d'item dans le panier
+          $(this).parent().parent().children(".prixItem").html(((value + 1) * prix).toFixed(2) + "€"); // modifie le prix
           updateTotal()
-      } else {
-          // Verification si la bd n'existe pas déja dans le panier
-          var doublon = false
-          $('.imgBD').each(function() {
-              if ($(this).attr('src') == src)  {
-                  var value = parseInt($(this).parent().parent().children("td:nth-child(2)").children().attr('value')); //Récupère la valeur du input
-                  $(this).parent().parent().children("td:nth-child(2)").children().attr('value',value + 1); // modifie la valeur du input
-                  console.log("yes");
-                  doublon = true;
-                  updateNbItemPanier(); // met à jour le nombre d'item dans le panier
-                  $(this).parent().parent().children(".prixItem").html(((value + 1) * prix).toFixed(2) + "€"); // modifie le prix
-                  updateTotal()
-              } 
-          })
-          if (doublon == false){
-              ajoutLignePanier(src,prix);
-              updateNbItemPanier()
-              updateTotal()
-          }
+        } 
+      })
+      if (doublon == false){
+        ajoutLignePanier(src,prix);
+        updateNbItemPanier()
+        updateTotal()
       }
+    }
   }
 
   /*--------------------------------------------------------------------- FILTRER LES BD PAR AUTEURS ---------------------------------------------------------------------*/
@@ -312,7 +312,6 @@ $(document).ready(function () {
       var albumfiltreSeries = new Map([...albums].filter(([cle, valeur]) => series.get(valeur.idSerie).nom == $(this).html()));
       lister(albumfiltreSeries)
     } )
-
   })
 
   /*--------------------------------------------------------------------- RECHERCHER UNE BD --------------------------------------------------------------------------------*/
