@@ -1,20 +1,34 @@
 
 
-
+/* 
+M : Execute la fonction au moment ou le document est pret
+O : /
+I : /
+*/
 $(document).ready(function () {
   /*--------------------------------------------------------------------- LISTER LES BD PAR PAGES / LOT -----------------------------------------------------------------*/
+  
+  /* 
+  M : Liste toute les informations contenu dans le parametre reçu dans l'html
+  O : /
+  I : objet Map contenant des données a afficher
+  */
   function lister (albums) {
     var tableDonnees = new Array;
-    // prend la variable Map et la convertie en array ordonnée avec les données qu'on a besoin
-    for (const [cle, valeur] of albums) {
+    for (const [cle, valeur] of albums) {     // prend la variable Map et la convertie en array ordonnée avec les données qu'on a besoin
       serie = series.get(valeur.idSerie);
       var donneeAuteur = auteurs.get(valeur.idAuteur);
       var nomFic = serie.nom + "-" + valeur.numero + "-" + valeur.titre;
       nomFic = nomFic.replace(/'|!|\?|\.|"|:|\$/g, "");
       var donnees = {titre: valeur.titre, numero: valeur.numero, serie: serie.nom, auteurs: donneeAuteur.nom, prix: valeur.prix, src: `albums/${nomFic}.jpg`};
       tableDonnees.push(donnees);
-    } 
-    /* Affiche les données  dans l'html */
+    }
+
+    /* 
+    M : Ajoute les informations dans l'html sous forme de carte
+    O : /
+    I : /
+    */
     function showList(){
       const elApp = $("#listeBD");
       elApp.html("");
@@ -49,15 +63,19 @@ $(document).ready(function () {
       }
     }
     /* Données spécifiques a la pagination */
-    const numberOfItems = 8 /* Nombre de BD par page */
-    var first = 0 /* Premiere page */
-    var maxPages = Math.ceil(tableDonnees.length / numberOfItems); /* Calcule du nombre de page maximum */
-    var actualPage = 1
+    const numberOfItems = 8                                                    /* Nombre de BD par page */
+    var first = 0                                                              /* Premiere page */
+    var maxPages = Math.ceil(tableDonnees.length / numberOfItems);             /* Calcule du nombre de page maximum */
+    var actualPage = 1                                                         /* l'utilisateur arrivera sur la page 1 en allant sur le site */
     
-    showList(albums)
+    showList()
     activerAjoutPanier()
 
-    /* Premiere page */
+    /* 
+    M : Va a la premiere paga
+    O : /
+    I : event
+    */
     $('.btnFirstPage').on('click',function(e) {
       e.preventDefault()
       first = 0
@@ -66,7 +84,12 @@ $(document).ready(function () {
       activerAjoutPanier()
       window.scrollTo(0,0)
     })
-    /* Page precedente */
+
+    /* 
+    M : Va a la page precedente
+    O : /
+    I : event
+    */
     $('.btnPrevious').on('click',function(e) {
       e.preventDefault()
       if(first-numberOfItems >= 0){
@@ -77,7 +100,12 @@ $(document).ready(function () {
         window.scrollTo(0,0)
       } 
     })
-    /* Derniere page */
+
+    /* 
+    M : Va a la derniere page
+    O : /
+    I : event
+    */
     $('.btnLastPage').on('click',function(e) {
       e.preventDefault()
       first = (maxPages * numberOfItems)-numberOfItems;
@@ -86,7 +114,12 @@ $(document).ready(function () {
       activerAjoutPanier() 
       window.scrollTo(0,0)
     }) 
-    /* Page suivante */
+
+    /* 
+    M : Va a la page suivante
+    O : /
+    I : event
+    */
     $('.btnNextPage').on('click',function(e) {
       e.preventDefault()
       if(first+numberOfItems<=tableDonnees.length){
@@ -97,7 +130,12 @@ $(document).ready(function () {
         window.scrollTo(0,0)
       }
     })
-    /* Info sur la page actuelle */
+
+    /* 
+    M : Affiche les infos de pagination
+    O : /
+    I : /
+    */
     function showPageInfo(){
       $('.pageInfo').html(`${actualPage} / ${maxPages}`)
     }
@@ -105,8 +143,14 @@ $(document).ready(function () {
 
   lister(albums)
   /*--------------------------------------------------------------------- AJOUTER / SUPPRIMER BD DANS PANIER ------------------------------------------------------------*/
-  var nbItemPanier = 0
-  /* Ajoute les evenements sur les bouton d'ajout au panier et sur les bouton de suppression d'article dans le panier*/
+  
+  var nbItemPanier = 0                                                         /* Valeur initiale du nombre d'article dans le panier */
+
+  /* 
+  M : Ajoute les evenements sur les bouton d'ajout au panier et sur les bouton de suppression d'article dans le panier
+  O : /
+  I : /
+  */
   function  activerAjoutPanier() { 
     $('.ajout').each(function() {
       $(this).on('click', ajouterAuPanier)
@@ -122,7 +166,12 @@ $(document).ready(function () {
 
   });
   }
-  /* Met à jour le nombre d'articles affiché dans le panier */
+
+  /* 
+  M : Met à jour le nombre d'articles affiché dans le panier
+  O : /
+  I : /
+  */
   function updateNbItemPanier() {
       nbItemPanier++;
       $('.badge').each(function() {
@@ -130,7 +179,12 @@ $(document).ready(function () {
 
       })
   }
-  /* Met à jour le total du panier */
+
+  /* 
+  M : Met à jour le total du panier
+  O : /
+  I : /
+  */
   function updateTotal () {
       var total = 0
       $('.prixItem').each(function() {
@@ -138,14 +192,19 @@ $(document).ready(function () {
           prix = prix.replace(/€| /g, "");
           prix = parseFloat(prix);
           total +=prix
-          /* total = total.toFixed(2) */
+          total = parseFloat(total).toFixed(2)
       })
       $('.total').html("Total : " + total + " €")
 
 
   }
-  /* Ajoute l''affiche de la BD au panier */
-  function ajoutPanier (src, prix) {
+
+  /* 
+  M : Ajoute l'affiche de la BD au panier
+  O : /
+  I : /
+  */
+  function ajoutLignePanier (src, prix) {
       $('.panier').append(
           `
           <tr>
@@ -157,7 +216,12 @@ $(document).ready(function () {
           `
       ) 
   }
-  /* Ajoute la BD au panier et met à jour le total et le nombre d'article dans le panier */
+
+  /* 
+  M : Ajoute la BD au panier et met à jour le total et le nombre d'article dans le panier
+  O : /
+  I : /
+  */
   function ajouterAuPanier () {
       // recuperation des informations
       var prix = $(this).parent().children('.prix').html();
@@ -167,7 +231,7 @@ $(document).ready(function () {
       var src = $(this).parent().parent().children('.card-img-top').attr('src');
 
       if ($('.badge').html() == 0) {
-          ajoutPanier(src,prix);
+          ajoutLignePanier(src,prix);
           updateNbItemPanier();
           updateTotal()
       } else {
@@ -185,7 +249,7 @@ $(document).ready(function () {
               } 
           })
           if (doublon == false){
-              ajoutPanier(src,prix)
+              ajoutLignePanier(src,prix);
               updateNbItemPanier()
               updateTotal()
           }
@@ -193,12 +257,22 @@ $(document).ready(function () {
   }
 
   /*--------------------------------------------------------------------- FILTRER LES BD PAR AUTEURS ---------------------------------------------------------------------*/
-  /* Ajoute au filtre d'auteurs tout les auteurs enregistré */
+  
+  /* 
+  M : Ajoute a la zone de filtre d'auteurs tout les auteurs enregistré
+  O : /
+  I : valeur de chaque iteration de auteurs
+  */
   auteurs.forEach(value => {
     $('.filtreAuteurs').append(
       `<option class="choixAuteurs">${value.nom}</option>`
   )})
-  /* Affiche la liste filtré */
+
+  /* 
+  M : Affiche la liste filtré
+  O : /
+  I : /
+   */
   $('.choixAuteurs').each(function () {
     $(this).on('click',function() {
       var albumfiltreAuteurs = new Map([...albums].filter(([cle, valeur]) => auteurs.get(valeur.idAuteur).nom == $(this).html()));
@@ -207,13 +281,32 @@ $(document).ready(function () {
   })
 
   /*--------------------------------------------------------------------- FILTRER LES BD PAR SERIES -----------------------------------------------------------------------*/
-  /* Ajoute au filtre de serie tout les serie enregistré */
-  series.forEach(value => {
+  
+  /* 
+  M : Ajoute a la zone de filtre de serie toutes les series enregistrés
+  O : /
+  I : valeur de chaque itération de series
+  */
+  var serieTriDesignation = new Map([...series].sort(([cle, valeur], [cle2, valeur2]) => {
+    if (valeur.nom > valeur2.nom) {
+      return 1;
+    }
+    if (valeur.nom < valeur2.nom) {
+      return -1;
+    }
+    return 0; 
+  }))
+  serieTriDesignation.forEach(value => {
     $('.filtreSeries').append(
       `<option class="choixSeries">${value.nom}</option>`
     )
   })
-  /* Affiche la liste filtré */
+
+  /* 
+  M : Affiche la liste filtré
+  O : /
+  I : /
+  */
   $('.choixSeries').each(function () {
     $(this).on('click', function () {
       var albumfiltreSeries = new Map([...albums].filter(([cle, valeur]) => series.get(valeur.idSerie).nom == $(this).html()));
@@ -223,7 +316,12 @@ $(document).ready(function () {
   })
 
   /*--------------------------------------------------------------------- RECHERCHER UNE BD --------------------------------------------------------------------------------*/
-  /* Affiche la liste filtré */
+  
+  /* 
+  M : Affiche la liste filtré
+  O : /
+  I : event
+  */
   $('.navbar-form').submit(function (e) { 
     e.preventDefault();
     var recherche = $('#rechercheNav').val()  //Récupère valeur de la barre de recherche
@@ -232,7 +330,12 @@ $(document).ready(function () {
   });
 
   /*--------------------------------------------------------------------- TRIER LES BD -------------------------------------------------------------------------------------*/
- /* En fonction de l'option de tri choisi, on affiche la liste trié */
+  
+  /* 
+  M : En fonction de l'option de tri choisi, on affiche la liste trié
+  O : /
+  I : /
+  */
   $('.tri').each(function() {
     $(this).on('click', function () {
       var albumsTri;
