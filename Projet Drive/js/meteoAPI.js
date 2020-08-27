@@ -16,7 +16,7 @@ if (navigator.geolocation) {
 } else {
     $("#meteo").html("Geolocalisation désactivé")   
 }
-
+console.log("de");
 /* 
 M : Execute la fonction au moment ou le document est pret
 O : /
