@@ -1,78 +1,30 @@
 @font-face {
     font-family: 'anime';
     src: url(./font/JandaManateeSolid.ttf);
-  }
-/* Formulaire connexion */
-.inline-form {
-    /* max-width: 500px; */
-    width: 45%;
-    min-width: 400px;
-    margin: 10px auto;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 2% 5%;
-    text-align: center;
 }
-.form-group, .titre, button {
-    text-align: center;
-}
-.mdpPerdu {
-    margin-bottom: 0.5em;
+  .navbar-brand {
+    font-family: 'anime';
 }
 
-/* Contenu de la page */
-.wrapper {
-    align-items: stretch;
-    display: flex;
-    width: 100%;
-}
-/* BD */
-
-
-/* Panier */
-/* .dropdown-menu {
-    width: 320px;
-
-} */
-/* .dropdown-menu::after {
-    bottom: 100%;
-    left: 95%;
-    border: 1px solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-bottom-color: white;
-    border-width: 8px;
-    margin-left: -8px;
-} */
-.dropdown-menu input {
+/* .dropdown-menu input {
     width: 50px;
-}
+} */
 
 .divider-small {
     width: 30px;
     background-color: rgb(73, 73, 73);
     height: 3px;
 }
+
 .range-field input {
     width: 100%;
 }  
- 
-.dropdown-toggle::after {
-    display: none
-}
+
 .tri {
     width: 13%;
     min-width: 200px;
 }
-.navbar-brand {
-    font-family: 'anime';
-}
-.table td {
-    vertical-align: middle;
-}
+
 .panier-item {
     max-height: 200px;
     overflow: auto;

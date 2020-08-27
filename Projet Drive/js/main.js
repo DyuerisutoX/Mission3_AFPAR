@@ -160,7 +160,6 @@ $(document).ready(function () {
     })
     $(this).closest('tr').remove();
     updateTotal()
-
   });
   function  activerAjoutPanier() { 
     $('.ajout').each(function() {
@@ -192,12 +191,11 @@ $(document).ready(function () {
           var prix = $(this).html()
           prix = prix.replace(/€| /g, "");
           prix = parseFloat(prix);
-          total +=prix
-          total = parseFloat(total).toFixed(2)
+          total = total + prix
+          var totalFloat = parseFloat(total)
+          console.log();
       })
-      $('.total').html("Total : " + total + " €")
-
-
+      $('.total').html("Total : " + parseFloat(total).toFixed(2) + " €")
   }
 
   /* 
@@ -206,16 +204,16 @@ $(document).ready(function () {
   I : /
   */
   function ajoutLignePanier (src, prix) {
-      $('.panier').append(
-          `
-          <tr>
-              <td><img src="${src}"class="imgBD" width="50px" height="auto" alt=""></td>
-              <td class="nbItem"><input type="number" disabled value="1"></td>
-              <td class="prixItem">${prix} €</td>
-              <td><button type="button" class="btn btn-danger"><i class="fas fa-times"></i></button></td>
-          </tr>
-          `
-      ) 
+    $('.panier').append(
+      `
+      <tr>
+        <td><img src="${src}"class="imgBD" width="50px" height="auto" alt=""></td>
+        <td class="nbItem align-middle text-center"><input class="w-50" type="number" disabled value="1"></td>
+        <td class="prixItem align-middle">${prix} €</td>
+        <td class="align-middle"><button type="button" class="btn btn-danger "><i class="fas fa-times"></i></button></td>
+      </tr>
+      `
+    ) 
   }
 
   /* 
