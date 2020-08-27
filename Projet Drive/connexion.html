@@ -1,64 +1,85 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Connexion</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="style.css">
-    </head>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
-            <img src="comic.png" alt="Logo" width="30" height="auto">
-        </a>
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark border-bottom border-primary">
+        <!-- LOGO -->
+        <a class="navbar-brand" href="index.html">
+          <img src="./media/comicv2.png" alt="Logo" width="30"> BD Store
+        </a>        
     </nav>
-    <div class="container">
-        <div class="col-12">
+
+    <div class="container d-flex justify-content-center">
+        <div class=" text-center mt-5">
             <div class="titre">
                 <h1>IDENTIFIEZ-VOUS</h1>
             </div>
-            <div class="inline-form">
-                <form action="#" class="needs-validation" novalidate>
-                    <div class="form-group">
-                        <h1>Déjà client ?</h1>
-                        <label for="Id">Identifiant</label>
-                        <input type="text" class="form-control" placeholder="Entrez votre identifiant" id="id" required>
-                        <div class="valid-feedback">Valide</div>
-                        <div class="invalid-feedback">Veuillez saisir votre identifiant</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="Mdp">Mot de passe</label>
-                        <input type="password" class="form-control" placeholder="Entrez un mot de passe" id="mdp" required>
-                        <div class="valid-feedback">Valide</div>
-                        <div class="invalid-feedback">Veuillez saisir un mot de passe</div>
-                    </div>
-                    <div class="form-check mb-2">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox"> Se souvenir de moi
-                        </label>
-                    </div>
-                    <div class="mdpPerdu">
-                        <a href="#">Vous avez oublié votre mot de passe ? ›</a>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Connexion</button>
-                </form>
-            </div>
-            <div class="inline-form">
+            <form action="#" class=" border border-primary rounded p-3 connexion mb-4 ">
+                <!-- CHAMP IDENTIFIANT -->
+                <div class="form-group">
+                    <h1>Déjà client ?</h1>
+                    <label for="Id">Identifiant</label>
+                    <input type="text" id="login" class="form-control" placeholder="Entrez votre identifiant">
+                    <div id="logMessage"></div>
+                </div>
+                <!-- CHAMP MOT DE PASSE -->
+                <div class="form-group">
+                    <label for="Mdp">Mot de passe</label>
+                    <input type="password" id="mdp" class="form-control" placeholder="Entrez un mot de passe">
+                    <div id="passMessage"></div>
+                </div>
+
+                <div class="form-check mb-2">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox"> Se souvenir de moi
+                    </label>
+                </div>
+
+                <div class="mdpPerdu">
+                    <a href="#">Vous avez oublié votre mot de passe ? ›</a>
+                </div>
+                <div id="message"></div><br>
+                <!-- BOUTON DE CONNECTION -->
+                <button type="submit" id="connection" class="btn btn-primary">Connexion</button>
+
+            </form>
+            <!-- PARTIE NOUVEAU CLIENT + BOUTON CREATION DE COMPTE -->
+            <div class="border border-primary rounded p-3">
                 <h1>Nouveau client ?</h1>
-                <button type="submit" class="btn btn-primary">Créez un compte</button>
+                <a href="register.html" class="btn btn-lg btn-primary" role="button" title="création compte">Créez un
+                    compte</a>
             </div>
+
         </div>
     </div>
+    <!-- FOOTER DE LA PAGE -->
     <footer class="fixed-bottom text-white bg-dark">
         <div class="footer-copyright text-center py-3">© 2020 Copyright:
-          <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
         </div>
-      </footer>
+    </footer>
+
 </body>
-<script src="connexion.js"></script>
+
+<script src="js/connexion.js"></script>
+
 </html>

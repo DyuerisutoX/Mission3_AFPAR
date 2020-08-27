@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark border-bottom border-primary">
+        <!-- LOGO -->
+        <a class="navbar-brand" href="index.html">
+          <img src="./media/comicv2.png" alt="Logo" width="30"> BD Store
+        </a>        
+    </nav>
+
+    <div class="container d-flex justify-content-center">
+        <div class=" mt-5">
+            <div class="titre">
+                <h1>CRÉATION DE COMPTE </h1>
+            </div>
+            <form action="#" id="formulaire" class="needs-validation border border-primary rounded p-3 mb-4 text-center" novalidate>
+                <!-- CHAMP NOM -->
+                <div class="form-group">
+                    <h2>VOS IDENTIFIANTS</h2>
+                    <label for="nom">NOM</label>
+                    <input type="text" id="nom" name="nom" class="form-control" placeholder="Entrez votre nom">
+                    <div id="nMessage"></div>
+                </div>
+                <!-- CHAMP PRENOM -->
+                <div class="form-group">
+                    <label for="prenom">PRÉNOM</label>
+                    <input type="text" id="prenom" name="prenom" class="form-control" placeholder="Entrez votre prénom">
+                    <div id="pMessage"></div>
+                </div>
+                <!-- BOUTONS RADIO -->
+                <div class="d-flex  ">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio1">M.</label>
+                    </div>
+
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio2">Mme</label>
+                    </div>
+                </div>
+                <!-- CHAMP MOT DE PASSE -->
+                <div class="form-group">
+                    <label for="Mdp">Mot de passe</label>
+                    <input type="password" id="mdp" name="mdp" class="form-control"
+                        placeholder="Entrez un mot de passe">
+                    <div id="valeurMessage"></div>
+                    <div id="mdpMessage"></div>
+                </div>
+                <!-- CHAMP DE VERIFICATION DE MOT DE PASSE -->
+                <div class="form-group">
+                    <label for="Mdp">Vérification</label>
+                    <input type="password" id="confirmation" name="confirmation" class="form-control"
+                        placeholder="Veuillez confirmer votre mot de passe" required>
+                    <div id="confMessage"></div>
+                    <div id="message"></div>
+                </div>
+                <!-- BOUTONS DE VALIDATION ET DE RAZ DU FORMULAIRE -->
+                <button type="reset" id="rafraichir" value="Rafraichir"
+                    class="btn btn-primary mb-2">Recommencer</button>
+                <button type="submit" id="envoi" value="Envoyer" class="btn btn-primary mb-2 ">Valider</button>
+
+            </form>
+        </div>
+    </div>
+    <!-- FOOTER DE LA PAGE -->
+    <footer class="fixed-bottom text-white bg-dark">
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+        </div>
+    </footer>
+
+</body>
+
+<script src="js/register.js"></script>
+
+</html>
