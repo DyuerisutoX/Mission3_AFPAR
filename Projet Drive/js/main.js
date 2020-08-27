@@ -111,7 +111,7 @@ $(document).ready(function () {
       first = (maxPages * numberOfItems)-numberOfItems;
       actualPage = maxPages;
       showList();
-      activerAjoutPanier() 
+      activerAjoutPanier()
       window.scrollTo(0,0)
     }) 
 
@@ -151,20 +151,21 @@ $(document).ready(function () {
   O : /
   I : /
   */
+  $('.table tbody').on('click', '.btn-danger', function () {
+    var nbItem = $(this).parent().parent().children('td:nth-child(2)').children().val() // Récupère la valeur de l'input
+    console.log(nbItem)
+    nbItemPanier -= nbItem
+    $('.badge').each(function() {
+      $(this).html(nbItemPanier)
+    })
+    $(this).closest('tr').remove();
+    updateTotal()
+
+  });
   function  activerAjoutPanier() { 
     $('.ajout').each(function() {
       $(this).on('click', ajouterAuPanier)
     })
-    $('.table tbody').on('click', '.btn-danger', function () {
-      var nbItem = $(this).parent().parent().children('td:nth-child(2)').children().val() // Récupère la valeur de l'input
-      nbItemPanier -= nbItem
-      $('.badge').each(function() {
-        $(this).html(nbItemPanier)
-      })
-      $(this).closest('tr').remove();
-      updateTotal()
-
-  });
   }
 
   /* 
