@@ -4,11 +4,14 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Panier</title>
+      <link rel="icon" href="./media/android-chrome-512x512.png">
       <!-- CSS  BOOTSTRAP-->
       <link rel="stylesheet" href="./assets/bootstrap.min.css">
       <!-- CSS Perso -->
       <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="css/panier.css">
+      <!-- <link rel="stylesheet" media="screen and (max-width: 500px)" href="css/panierMedium.css" /> -->
+      <!-- <link rel="stylesheet" media="screen and (max-width: 263px)" href="css/panierSmall.css" /> -->
       <!-- JS BOOTSTRAP-->
       <script src="./assets/jquery-3.5.1.slim.min.js"></script>
       <script src="./assets/popper.min.js"></script>
@@ -54,8 +57,8 @@
       <div class="cart-wrap">
          <div class="container-fluid">
             <div class="row">
-               <div class="col-lg-9">
-                  <div class="main-heading">Shopping Cart</div>
+               <div class="col-sm-12 col-lg-9">
+                  <div class="main-heading">Panier</div>
                   <div class="table-cart">
                      <table class="table">
                         <thead>
@@ -77,6 +80,7 @@
                                        Blacksad - Quelque part entre les ombres
                                        <br>T01
                                     </div>
+                                    
                                     <div class="price" id="priceBD1">
                                        <span id="priceUniBD1">12.50</span>€
                                     </div>

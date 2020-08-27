@@ -22,7 +22,11 @@ $(document).ready(function (){
 
     //Suprime le produit de la liste
     $('.table tbody').on('click', '.btn', function () {
+        updateTotal();
         $(this).closest('tr').remove();
+
+        
+        //console.log(prixSoustrait);
 
     });
 
@@ -176,6 +180,12 @@ $(document).ready(function (){
         let message = "Prochainement sur cet ecran, le paiement";
         $('#message').css({'color': 'orange'}).text(message);
     })
+
+    function updateTotal()
+    {
+        prixSoustrait = document.getElementsByClassName('total');
+        console.log(prixSoustrait.innerText);
+    }
 
 
 })

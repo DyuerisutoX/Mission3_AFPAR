@@ -181,3 +181,44 @@
     float: right;
     cursor: pointer;
 }
+
+@media(max-width: 500px)
+{
+    .price
+    {
+        display:none;
+    }
+
+
+    thead
+    {
+        display: none;
+    }
+
+    .total
+    {
+        display: none;
+    }
+
+    .product-count .qty
+    {
+        width: 30px;
+    }
+}
+
+@media(max-width: 325px)
+{
+    .name-product
+    {
+        display:none;
+    }
+}
+
+@media(max-width: 263px)
+{
+    .count-inlineflex
+    {
+        display: inline-grid;
+        
+    }
+}
