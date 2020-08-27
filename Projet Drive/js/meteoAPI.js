@@ -4,10 +4,11 @@ https://api.openweathermap.org/data/2.5/weather?lat=-20.9628&lon=55.6501&appid=6
 var latitude;
 var longitude;
 if (navigator.geolocation) {
-    /* function showPosition(position) {
-        latitude = position.coords.latitude
-        longitude = position.coords.longitude
-    } */
+    /* 
+    M : recupere la longitude et le latitude de la position de l'utilisateur
+    O : /
+    I : position
+    */
     navigator.geolocation.getCurrentPosition(function (position) {
         latitude = position.coords.latitude
         longitude = position.coords.longitude
@@ -15,6 +16,12 @@ if (navigator.geolocation) {
 } else {
     $("#meteo").html("Geolocalisation désactivé")   
 }
+
+/* 
+M : Execute la fonction au moment ou le document est pret
+O : /
+I : /
+*/
 $( document ).ready(function() {
     if (latitude !== undefined) {
         var url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=65372f0a54dd75934920a83319e364a6&lang=fr&units=metric`
