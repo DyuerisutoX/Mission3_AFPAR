@@ -1,6 +1,4 @@
-/*
-https://api.openweathermap.org/data/2.5/weather?lat=-20.9628&lon=55.6501&appid=65372f0a54dd75934920a83319e364a6&lang=fr&units=metric  Saint-André
-*/
+/* https://api.openweathermap.org/data/2.5/weather?lat=-20.9628&lon=55.6501&appid=65372f0a54dd75934920a83319e364a6&lang=fr&units=metric  Saint-André */
 var latitude;
 var longitude;
 if (navigator.geolocation) {
@@ -16,7 +14,6 @@ if (navigator.geolocation) {
 } else {
     $("#meteo").html("Geolocalisation désactivé")   
 }
-console.log("de");
 /* 
 M : Execute la fonction au moment ou le document est pret
 O : /
