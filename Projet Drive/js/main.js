@@ -153,7 +153,6 @@ $(document).ready(function () {
   */
   $('.table tbody').on('click', '.btn-danger', function () {
     var nbItem = $(this).parent().parent().children('td:nth-child(2)').children().val() // Récupère la valeur de l'input
-    console.log(nbItem)
     nbItemPanier -= nbItem
     $('.badge').each(function() {
       $(this).html(nbItemPanier)
@@ -192,8 +191,6 @@ $(document).ready(function () {
           prix = prix.replace(/€| /g, "");
           prix = parseFloat(prix);
           total = total + prix
-          var totalFloat = parseFloat(total)
-          console.log();
       })
       $('.total').html("Total : " + parseFloat(total).toFixed(2) + " €")
   }
@@ -272,11 +269,15 @@ $(document).ready(function () {
   O : /
   I : /
    */
-  $('.choixAuteurs').each(function () {
+/*   $('.choixAuteurs').each(function () {
     $(this).on('click',function() {
       var albumfiltreAuteurs = new Map([...albums].filter(([cle, valeur]) => auteurs.get(valeur.idAuteur).nom == $(this).html()));
       lister(albumfiltreAuteurs)
     } )
+  }) */
+  $('.filtreAuteurs').on('change', function () {
+    var albumfiltreAuteurs = new Map([...albums].filter(([cle, valeur]) => auteurs.get(valeur.idAuteur).nom == $('.choixAuteurs:selected').html()));
+    lister(albumfiltreAuteurs)
   })
 
   /*--------------------------------------------------------------------- FILTRER LES BD PAR SERIES -----------------------------------------------------------------------*/
@@ -306,12 +307,18 @@ $(document).ready(function () {
   O : /
   I : /
   */
-  $('.choixSeries').each(function () {
+/*   $('.choixSeries').each(function () {
     $(this).on('click', function () {
       var albumfiltreSeries = new Map([...albums].filter(([cle, valeur]) => series.get(valeur.idSerie).nom == $(this).html()));
       lister(albumfiltreSeries)
     } )
+  }) */
+
+  $('.filtreSeries').on('change', function () {
+    var albumfiltreSeries = new Map([...albums].filter(([cle, valeur]) => series.get(valeur.idSerie).nom == $('.choixSeries:selected').html()));
+      lister(albumfiltreSeries)
   })
+
 
   /*--------------------------------------------------------------------- RECHERCHER UNE BD --------------------------------------------------------------------------------*/
   
@@ -334,47 +341,46 @@ $(document).ready(function () {
   O : /
   I : /
   */
-  $('.tri').each(function() {
-    $(this).on('click', function () {
-      var albumsTri;
-      switch ($(this).val()) { // Récupère la valeur de l'option choisie
-        case "0":
-          albumsTri = new Map([...albums].sort(([cle, valeur], [cle2, valeur2])=> {
-            if (valeur.titre > valeur2.titre) {
-              return 1;
-            }
-            if (valeur.titre < valeur2.titre) {
-              return -1;
-            }
-            return 0; 
-          }))
-          lister(albumsTri)
-          break;
-        case "1":
-          albumsTri =  new Map([...albums].sort(([cle, valeur], [cle2, valeur2])=> {
-            if (parseFloat(valeur.prix) > parseFloat(valeur2.prix)) {
-                return 1;
-            }
-            if (parseFloat(valeur.prix) < parseFloat(valeur2.prix)) {
-                return -1;
-            }
-            return 0; 
-          }));
-          lister(albumsTri)
-          break;
-        case "2":
-          albumsTri = new Map([...albums].sort(([cle, valeur], [cle2, valeur2])=> {
-            if (parseFloat(valeur.prix) < parseFloat(valeur2.prix)) {
-                return 1;
-            }
-            if (parseFloat(valeur.prix) > parseFloat(valeur2.prix)) {
-                return -1;
-            }
-            return 0;
-          }));
-          lister(albumsTri)
-          break;
+ $('.tri').on('change', function () {
+   switch ($('.tri option:selected').val()) {
+    case "0":
+      albumsTri = new Map([...albums].sort(([cle, valeur], [cle2, valeur2])=> {
+        if (valeur.titre > valeur2.titre) {
+          return 1;
+        }
+        if (valeur.titre < valeur2.titre) {
+          return -1;
+        }
+        return 0; 
+      }))
+      lister(albumsTri)
+      break;
+   
+    case "1":
+      albumsTri =  new Map([...albums].sort(([cle, valeur], [cle2, valeur2])=> {
+        if (parseFloat(valeur.prix) > parseFloat(valeur2.prix)) {
+            return 1;
+        }
+        if (parseFloat(valeur.prix) < parseFloat(valeur2.prix)) {
+            return -1;
+        }
+        return 0; 
+      }));
+      lister(albumsTri)
+      break;
+   
+   case "2":
+    albumsTri = new Map([...albums].sort(([cle, valeur], [cle2, valeur2])=> {
+      if (parseFloat(valeur.prix) < parseFloat(valeur2.prix)) {
+          return 1;
       }
-    })
-  })
+      if (parseFloat(valeur.prix) > parseFloat(valeur2.prix)) {
+          return -1;
+      }
+      return 0;
+    }));
+    lister(albumsTri)
+    break;
+   }
+ })
 })
