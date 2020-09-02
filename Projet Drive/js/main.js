@@ -237,7 +237,6 @@ $(document).ready(function () {
         if ($(this).attr('src') == src)  {
           var value = parseInt($(this).parent().parent().children("td:nth-child(2)").children().attr('value')); //Récupère la valeur du input
           $(this).parent().parent().children("td:nth-child(2)").children().attr('value',value + 1); // modifie la valeur du input
-          console.log("yes");
           doublon = true;
           updateNbItemPanier(); // met à jour le nombre d'item dans le panier
           $(this).parent().parent().children(".prixItem").html(((value + 1) * prix).toFixed(2) + "€"); // modifie le prix
@@ -262,7 +261,8 @@ $(document).ready(function () {
   auteurs.forEach(value => {
     $('.filtreAuteurs').append(
       `<option class="choixAuteurs">${value.nom}</option>`
-  )})
+    )
+  })
 
   /* 
   M : Affiche la liste filtré
